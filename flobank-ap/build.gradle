@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.5.7'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'kr.co.api'
+version = '0.0.1-SNAPSHOT'
+description = 'flobank-ap'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // --- Spring Integration (TCP 서버) ---
+    implementation 'org.springframework.integration:spring-integration-ip'
+    implementation 'org.springframework.boot:spring-boot-starter-integration'
+
+// --- Web (Actuator 등 관리용 포트 8081) ---
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+// --- MyBatis (DB) ---
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5'
+    runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+
+// --- Utility (Lombok, DevTools, JSON) ---
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.projectlombok:lombok'
+// DTO <-> JSON 문자열 변환 (TCP 통신 시 필수)
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+// --- Test ---
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.5'
+    testImplementation 'org.springframework.integration:spring-integration-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

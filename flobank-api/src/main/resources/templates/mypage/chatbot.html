@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 외환 도우미</title>
+  <link rel="stylesheet" href="/static/css/mypage.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  <!-- 상단 헤더 -->
+  <header>
+    <div class="top-bar">
+      <ul>
+        <li><a href="#">기업뱅킹</a></li>
+        <li><a href="#">하나카드</a></li>
+        <li><a href="#">은행소개</a></li>
+        <li><a href="#">채용안내</a></li>
+      </ul>
+      <div class="right-menu">
+        <a href="#">로그인</a>
+        <a href="#">회원가입</a>
+        <a href="#">Language ▾</a>
+      </div>
+    </div>
+
+    <div class="main-nav">
+      <div class="logo">
+        <img src="/static/images/logo.png" alt="OO은행 로고">
+      </div>
+
+      <ul class="nav-menu">
+        <li class="menu-item" data-target="menu1"><a href="#">외화예금</a></li>
+        <li class="menu-item" data-target="menu2"><a href="#">외화송금</a></li>
+        <li class="menu-item" data-target="menu3"><a href="#">환전</a></li>
+        <li class="menu-item" data-target="menu4"><a href="#">환율</a></li>
+        <li class="menu-item" data-target="menu5"><a href="#">유학/이주/여행</a></li>
+        <li class="menu-item" data-target="menu6"><a href="#">고객센터</a></li>
+        <li class="menu-item" data-target="menu7"><a href="#">은행소개</a></li>
+      </ul>
+
+      <div class="nav-icons">
+        <a href="#"><i class="fa-solid fa-comment-dots"></i></a>
+        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="#"><i class="fa-solid fa-bars"></i></a>
+      </div>
+
+      <div id="menu1" class="dropdown">
+        <div class="menu-column">
+          <h4><a href="#">외화예금상품</a></h4>
+        </div>
+        <div class="menu-column">
+          <h4><a href="#">외화예금안내</a></h4>
+          <ul>
+            <li><a href="#">외화예금안내</a></li>
+            <li><a href="#">당행외화이체</a></li>
+            <li><a href="#">해외외화예금개설</a></li>
+          </ul>
+        </div>
+        <div class="menu-column">
+          <h4><a href="#">외화예금우대서비스</a></h4>
+        </div>
+      </div>
+
+      <div id="menu2" class="dropdown">
+        <div class="menu-column">
+          <h4><a href="#">외화송금서비스</a></h4>
+          <ul>
+            <li><a href="#">인터넷외화송금서비스</a></li>
+            <li><a href="#">BNK공동해외송금서비스</a></li>
+            <li><a href="#">해외즉시송금서비스</a></li>
+          </ul>
+        </div>
+        <div class="menu-column">
+          <h4><a href="#">외화송금보내기</a></h4>
+          <ul>
+            <li><a href="#">송금안내</a></li>
+            <li><a href="#">송금하기</a></li>
+          </ul>
+        </div>
+        <div class="menu-column"><h4><a href="#">외화송금받기</a></h4></div>
+      </div>
+
+      <div id="menu3" class="dropdown">
+        <div class="menu-column">
+          <h4><a href="#">환전안내</a></h4>
+          <ul>
+            <li><a href="#">환전 가능 통화</a></li>
+            <li><a href="#">환전 가능 금액</a></li>
+            <li><a href="#">환전 요령</a></li>
+          </ul>
+        </div>
+        <div class="menu-column"><h4><a href="#">환율 우대</a></h4></div>
+        <div class="menu-column"><h4><a href="#">환전 계산기</a></h4></div>
+        <div class="menu-column"><h4><a href="#">환전하기</a></h4></div>
+      </div>
+
+      <div id="menu4" class="dropdown">
+        <div class="menu-column">
+          <h4><a href="#">환율 제공 서비스</a></h4>
+          <ul>
+            <li><a href="#">지정환율통지서비스</a></li>
+            <li><a href="#">이메일환율통지서비스</a></li>
+            <li><a href="#">무료환율표서비스</a></li>
+          </ul>
+        </div>
+        <div class="menu-column"><h4><a href="#">외환시장 동향</a></h4></div>
+        <div class="menu-column"><h4><a href="#">환리스크 관리</a></h4></div>
+      </div>
+
+      <div id="menu5" class="dropdown">
+        <div class="menu-column">
+          <h4><a href="#">유학</a></h4>
+          <ul>
+            <li><a href="#">해외유학서비스안내</a></li>
+            <li><a href="#">유학경비환전/송금</a></li>
+            <li><a href="#">해외유학지원서비스</a></li>
+          </ul>
+        </div>
+        <div class="menu-column">
+          <h4><a href="#">이주</a></h4>
+          <ul>
+            <li><a href="#">해외이주서비스안내</a></li>
+            <li><a href="#">해외이주비환전/송금</a></li>
+          </ul>
+        </div>
+        <div class="menu-column">
+          <h4><a href="#">여행</a></h4>
+          <ul>
+            <li><a href="#">여행시유의사항</a></li>
+            <li><a href="#">여행경비환전</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="menu6" class="dropdown">
+        <div class="menu-column"><h4><a href="#">고객상담</a></h4></div>
+        <div class="menu-column"><h4><a href="#">이용안내</a></h4></div>
+        <div class="menu-column"><h4><a href="#">금융소비자보호</a></h4></div>
+        <div class="menu-column"><h4><a href="#">상품공시실</a></h4></div>
+        <div class="menu-column"><h4><a href="#">자료실</a></h4></div>
+      </div>
+
+      <div id="menu7" class="dropdown">
+        <div class="menu-column"><h4><a href="#">은행안내</a></h4></div>
+        <div class="menu-column"><h4><a href="#">OO은행 스토리</a></h4></div>
+        <div class="menu-column"><h4><a href="#">투자자정보</a></h4></div>
+        <div class="menu-column"><h4><a href="#">영업점 안내</a></h4></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="chatbot-page">
+    <section class="chatbot-hero">
+      <div class="hero-label">AI 외환 도우미</div>
+      <h1>무엇을 도와드릴까요?</h1>
+      <p>
+        실시간 상담, 환전 절차 안내, 맞춤형 외환 전략까지 하나의 화면에서 손쉽게 상담받으세요.
+        필요한 주제를 입력하거나 아래 자주 찾는 안내를 확인해 보세요.
+      </p>
+    </section>
+
+    <div class="chatbot-layout">
+      <section class="chatbot-console">
+        <header class="console-header">
+          <div>
+            <h2>AI 상담 채팅</h2>
+            <p>외환 전문 상담사가 필요한 경우 언제든 상담원에게 연결해 드립니다.</p>
+          </div>
+          <div class="console-actions">
+            <button class="outline"><i class="fa-solid fa-user-plus"></i> 상담사 연결</button>
+            <button class="outline"><i class="fa-solid fa-download"></i> 대화 저장</button>
+          </div>
+        </header>
+
+        <div class="chat-window">
+          <div class="message bot">
+            <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+            <div class="bubble">
+              <span class="meta">AI 외환 도우미 · 09:32</span>
+              <p>안녕하세요. OO은행 AI 외환 도우미입니다. 어떤 업무를 도와드릴까요?</p>
+            </div>
+          </div>
+          <div class="message user">
+            <div class="avatar"><i class="fa-solid fa-user"></i></div>
+            <div class="bubble">
+              <span class="meta">나 · 09:33</span>
+              <p>유학 준비 중인데, 환율 우대를 받으려면 어떻게 해야 하나요?</p>
+            </div>
+          </div>
+          <div class="message bot">
+            <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+            <div class="bubble">
+              <span class="meta">AI 외환 도우미 · 09:33</span>
+              <p>
+                유학 목적 환전 고객님께는 <strong>스마트 환율 우대 프로그램</strong>을 제공하고 있습니다.<br>
+                1) 인터넷뱅킹 또는 모바일 앱에서 우대 신청 → 2) 출국 7일 전까지 신청 완료 → 3) 지정 영업점 방문 후 우대율 적용 환전이 가능합니다.
+              </p>
+              <div class="suggested-actions">
+                <button><i class="fa-solid fa-link"></i> 우대 신청 바로가기</button>
+                <button><i class="fa-solid fa-store"></i> 가까운 영업점 찾기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-input">
+          <div class="prompt-chips">
+            <button>환전 가능 통화</button>
+            <button>해외송금 절차</button>
+            <button>지정환율 알림</button>
+            <button>외화예금 금리</button>
+          </div>
+          <div class="input-row">
+            <input type="text" placeholder="질문을 입력하거나 우측 메뉴에서 선택하세요.">
+            <button class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+          <p class="guide-text"><i class="fa-solid fa-shield-halved"></i> AI 상담 내용은 보안 기준에 따라 암호화되어 저장됩니다.</p>
+        </div>
+      </section>
+
+      <aside class="chatbot-support">
+        <div class="quick-links">
+          <h3>바로가기</h3>
+          <button><i class="fa-solid fa-chart-line"></i> 환율 차트 열기</button>
+          <button><i class="fa-solid fa-plane-departure"></i> 여행자 환전</button>
+          <button><i class="fa-solid fa-bell"></i> 알림 설정</button>
+        </div>
+
+        <div class="faq-card">
+          <h3>자주 찾는 질문</h3>
+          <div class="faq-item">
+            <span>환전 신청부터 수령까지 걸리는 시간은?</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+          <div class="faq-item">
+            <span>외화예금 자동이체는 어떻게 설정하나요?</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+          <div class="faq-item">
+            <span>해외송금 한도 상향은 어디에서 신청하나요?</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+        </div>
+
+        <div class="notice-card">
+          <h3><i class="fa-solid fa-shield-check"></i> 상담 유의사항</h3>
+          <p>AI 상담은 24시간 이용 가능하며, 심층 상담이 필요한 경우 영업일 기준 10분 내 담당자가 연결됩니다.</p>
+          <p>개인정보 및 금융거래 비밀번호는 절대 입력하지 마세요.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#">사고신고</a> |
+      <a href="#">상품공시실</a> |
+      <a href="#">보호금융상품등록부</a> |
+      <a href="#">경영공시</a> |
+      <a href="#">퇴직연금공시</a> |
+      <a href="#">인증센터</a> |
+      <a href="#">상담센터</a> |
+      <a href="#">개인정보처리방침</a> |
+      <a href="#">신용정보활용체계</a> |
+      <a href="#">영업점찾기</a>
+    </div>
+
+    <div class="footer-info">
+      <div class="footer-logos">
+        <img src="https://www.hanabank.com/static/images/footer/wa.png" alt="웹접근성">
+        <img src="https://www.hanabank.com/static/images/footer/isms.png" alt="ISMS">
+        <img src="https://www.hanabank.com/static/images/footer/bs7799.png" alt="BS 인증">
+      </div>
+      <p>© OO Bank. All rights reserved.</p>
+      <div class="footer-right">
+        <p><strong>고객센터</strong> 1588-1111 / 1599-1111</p>
+        <p><strong>고객센터(해외)</strong> +82-42-520-2500</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom-nav">
+      <div class="bottom-item">브랜드사이트 ▾</div>
+      <div class="bottom-item">하나네트워크 ▾</div>
+      <div class="bottom-item">글로벌네트워크 ↗</div>
+      <div class="bottom-item">하나은행 SNS ▾</div>
+      <div class="bottom-item">💬 하나소비자세상 ↗</div>
+    </div>
+  </footer>
+
+  <script src="/static/js/index.js"></script>
+</body>
+</html>

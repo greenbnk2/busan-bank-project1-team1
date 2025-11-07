@@ -1,0 +1,13 @@
+server:
+    port: 8080
+    servlet:
+        context-path: /flobank
+spring:
+    application:
+        name: flobank_api
+
+# 접속해야 할 flobank_ap (AP 서버) 정보
+flobank:
+  ap:
+    host: localhost
+    port: 9090 # AP 서버와 약속한 TCP 포트

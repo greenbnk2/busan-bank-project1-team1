@@ -1,0 +1,483 @@
+/* =========================================================
+   FLO BANK Base Style Sheet
+   파일명: base.css
+   설명: 모든 페이지 공통 적용 (reset + header + footer)
+   ========================================================= */
+
+/* 기본 초기화 및 폰트 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ------------------------------------
+   🔹 상단 헤더 영역 (top-bar + main-nav)
+------------------------------------ */
+
+/* 상단 탑바 */
+.top-bar {
+  background: #fafafa;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 80px;
+  font-size: 14px;
+}
+
+.top-bar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.top-bar a {
+  text-decoration: none;
+  color: #555;
+}
+
+.right-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.right-menu a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.right-menu a:hover {
+  color: #4A6FA5; 
+}
+
+/* 메인 네비게이션 */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 80px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* NAV 메뉴 */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu > li {
+  position: relative;
+}
+
+.nav-menu > li > a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  padding: 15px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.nav-menu > li > a:hover {
+  color: #4A6FA5;
+}
+
+/* 드롭다운 메뉴 */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: 1100px;
+  background: #fff;
+  border-top: 2px solid #4A6FA5;
+  display: none;
+  justify-content: flex-start;
+  gap: 60px;
+  padding: 30px 50px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transition: all 0.25s ease;
+  z-index: 100;
+}
+
+.dropdown.show {
+  display: flex;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 드롭다운 - 컬럼 */
+.menu-column {
+  min-width: 180px;
+}
+
+.menu-column h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.menu-column h4 a {
+  text-decoration: none;
+  color: #111;
+  transition: color 0.2s ease;
+}
+
+.menu-column h4 a:hover {
+  color: #4A6FA5;
+}
+
+/* 드롭다운 - 하위 목록 */
+.menu-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-column li {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.menu-column li a {
+  text-decoration: none;
+  color: #777;
+  transition: color 0.2s ease;
+}
+
+.menu-column li a:hover {
+  color: #4A6FA5;
+}
+
+/* 폰트어썸 네비 아이콘 */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-icons a {
+  color: #333;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-icons a:hover {
+  color: #4A6FA5;
+}
+
+/* ------------------------------------
+   🔹 푸터 영역
+------------------------------------ */
+
+footer {
+  margin-top: 60px;
+}
+
+.footer {
+  background: #f8f8f8;
+  border-top: 1px solid #e5e5e5; 
+  box-shadow: none;
+  padding: 60px 0 70px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* 푸터 링크 */
+.footer-links {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.footer-links a {
+  color: #444;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* 로고 + 저작권 */
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer-logos img {
+  height: 35px;
+  opacity: 0.9;
+}
+
+.footer-info p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* 고객센터 연락처 */
+.footer-right p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+.footer-right strong {
+  color: #222;
+  font-weight: 700;
+}
+
+/* 하단 버튼 */
+.footer-bottom-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.bottom-item {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bottom-item:hover {
+  background: #f1f1f1;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+
+
+/* -----------------------------
+  사이드 카테고리
+------------------------------ */
+.remit-sidebar {
+  width: 230px;
+  background: #fff;
+  border: 1px solid #e2e6ec;
+  border-radius: 10px;
+  padding: 25px 20px;
+  height: fit-content;
+}
+
+.remit-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #22304E;
+  margin-bottom: 20px;
+}
+
+.remit-category {
+  list-style: none;
+  padding: 0;
+}
+
+.remit-category > li {
+  margin-bottom: 14px;
+}
+
+/* 메인 카테고리 */
+.remit-category > li > a {
+  color: #222;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+/* hover 시 */
+.remit-category > li > a:hover {
+  color: #2C5DE5; /* 로열블루 */
+}
+
+/* 세부 카테고리 */
+.remit-subcategory {
+  list-style: none;
+  margin-top: 8px;
+  padding-left: 10px;
+}
+
+.remit-subcategory li {
+  margin-bottom: 6px;
+}
+
+.remit-subcategory a {
+  color: #666;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.remit-subcategory a:hover {
+  color: #2C5DE5;
+}
+
+/* 현재 페이지 (글씨 색상만 변경) */
+.remit-subcategory li.active a {
+  color: #2C5DE5;
+  font-weight: 700;
+}
+
+/* -----------------------------
+   remit: 메인 레이아웃
+------------------------------ */
+.remit-container {
+  display: flex;
+  justify-content: center; /* ✅ 전체 중앙 정렬 */
+  gap: 40px;               /* 사이 간격 */
+  max-width: 1100px;       /* 화면 너비 제한 */
+  margin: 80px auto;       /* 위아래 여백 + 가운데 정렬 */
+  align-items: flex-start; /* 높이 맞추기 */
+}
+
+/* 오른쪽 콘텐츠 */
+.remit-content {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #e2e6ec;
+  border-radius: 10px;
+  padding: 30px 40px;
+  min-height: 400px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+}
+
+.remit-content h2 {
+  font-size: 20px;
+  color: #22304E;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #E3E7EC;
+  padding-bottom: 10px;
+}
+
+/* =========================================================
+   🔹 Info / Get 페이지 공통 콘텐츠 스타일
+   설명: 인터넷송금(info1), 공동송금(info2), 즉시송금(info3),
+        송금받기(get), 송금안내(info) 등 본문 내용 통일화
+   ========================================================= */
+
+/* 기본 구조 */
+.info-section, .get-section {
+  margin-top: 20px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* 섹션 헤더 */
+.info-section h2, .get-section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #22304E;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #E3E7EC;
+  padding-bottom: 8px;
+}
+
+/* 설명 문단 */
+.info-section p, .get-section p {
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* 소제목 */
+.info-section h3, .get-section h3 {
+  font-size: 19px;
+  color: #22304E;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* 리스트 */
+.info-section ul, .get-section ul {
+  margin-left: 22px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.info-section li, .get-section li {
+  margin-bottom: 8px;
+  list-style-type: disc;
+}
+
+/* 강조 요소 */
+.info-section strong, .get-section strong {
+  color: #1E3E99;
+  font-weight: 700;
+}
+
+/* 경고나 주의사항 */
+.info-warning {
+  background: #fff8e6;
+  border: 1px solid #ffd166;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #5f4b00;
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+/* 표 (있을 경우) */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.info-table th, .info-table td {
+  border: 1px solid #ddd;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.info-table th {
+  background: #f4f6fa;
+  color: #22304E;
+  font-weight: 700;
+}
+
+.info-table td {
+  color: #444;
+}

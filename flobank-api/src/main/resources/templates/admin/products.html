@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OO은행 관리자 - 예·적금 관리</title>
+    <link rel="stylesheet" href="/static/css/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <aside class="sidebar">
+        <div class="logo">
+          <img src="/static/images/logo.png" alt="OO은행" />
+          <span>OO은행 ADMIN</span>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/admin/index.html"><i class="fa-solid fa-gauge"></i>대시보드</a></li>
+            <li><a href="/admin/settings.html"><i class="fa-solid fa-gear"></i>환경설정</a></li>
+            <li><a class="active" href="/admin/products.html"><i class="fa-solid fa-coins"></i>예·적금 관리</a></li>
+            <li><a href="/admin/members.html"><i class="fa-solid fa-user-group"></i>회원 관리</a></li>
+            <li><a href="/admin/board.html"><i class="fa-solid fa-building-columns"></i>은행소개 게시판</a></li>
+            <li><a href="/admin/customer.html"><i class="fa-solid fa-headset"></i>고객센터</a></li>
+            <li><a href="/admin/rate.html"><i class="fa-solid fa-chart-line"></i>환율 관리</a></li>
+          </ul>
+        </nav>
+        <div class="quick-actions">
+          <h4>빠른 처리</h4>
+          <a href="#register"><i class="fa-solid fa-plus"></i> 상품 등록</a>
+          <a href="#pending"><i class="fa-solid fa-circle-check"></i> 승인 대기</a>
+          <a href="#promo"><i class="fa-solid fa-bullseye"></i> 이벤트 금리</a>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="admin-header">
+          <div>
+            <h1 class="page-title">예·적금 상품 관리</h1>
+            <p class="page-subtitle">
+              외화예금과 인터넷 전용 상품의 금리, 조건, 노출 상태를 관리합니다.
+            </p>
+          </div>
+          <div class="user-info">
+            <div class="status">
+              <i class="fa-solid fa-circle text-green"></i>
+              실시간 판매 현황 수집 중
+            </div>
+            <div class="profile">
+              <div>
+                <strong>이나영 관리자</strong>
+                <div class="label">외화상품 기획</div>
+              </div>
+              <img src="https://i.pravatar.cc/100?img=21" alt="관리자" />
+            </div>
+          </div>
+        </header>
+
+        <section class="admin-content">
+          <section id="pending" class="section">
+            <div class="section-header">
+              <h2>승인 대기 상품</h2>
+              <a href="#"><i class="fa-solid fa-circle-info"></i> 심사 기준 보기</a>
+            </div>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>상품명</th>
+                    <th>상품 구분</th>
+                    <th>신청 부서</th>
+                    <th>요청일</th>
+                    <th>상태</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>글로벌 달러 외화적립예금</td>
+                    <td>외화적금</td>
+                    <td>외화상품 기획</td>
+                    <td>2024-03-02</td>
+                    <td><span class="status-badge warning"><i class="fa-solid fa-hourglass-half"></i> 금리 검토중</span></td>
+                  </tr>
+                  <tr>
+                    <td>해외직구 전용 환율연동예금</td>
+                    <td>외화예금</td>
+                    <td>디지털 전략</td>
+                    <td>2024-02-29</td>
+                    <td><span class="status-badge info"><i class="fa-solid fa-clipboard-check"></i> 약관 검토</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="register" class="section">
+            <div class="section-header">
+              <h2>신규 상품 등록</h2>
+              <a href="#"><i class="fa-solid fa-cloud-arrow-up"></i> 기존 상품 불러오기</a>
+            </div>
+            <div class="control-row">
+              <div class="control-group">
+                <label for="product-name">상품명</label>
+                <input id="product-name" type="text" placeholder="상품명을 입력하세요" />
+              </div>
+              <div class="control-group">
+                <label for="product-type">상품 유형</label>
+                <select id="product-type">
+                  <option>외화예금</option>
+                  <option>외화적금</option>
+                  <option>해외투자 연계예금</option>
+                </select>
+              </div>
+              <div class="control-group">
+                <label for="currency">기준 통화</label>
+                <select id="currency">
+                  <option>USD</option>
+                  <option>JPY</option>
+                  <option>EUR</option>
+                  <option>CNY</option>
+                </select>
+              </div>
+              <div class="control-group">
+                <label for="interest-rate">기본 금리 (%)</label>
+                <input id="interest-rate" type="number" step="0.01" placeholder="예) 3.25" />
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="product-desc">상품 요약</label>
+              <textarea id="product-desc" rows="4" placeholder="상품 특징을 간단히 입력하세요"></textarea>
+            </div>
+            <div class="control-group">
+              <label for="product-detail">상세 조건</label>
+              <textarea id="product-detail" rows="6" placeholder="가입 대상, 가입 기간, 우대 조건 등을 입력하세요"></textarea>
+            </div>
+            <button class="btn-primary">검토 요청</button>
+          </section>
+
+          <section id="promo" class="section">
+            <div class="section-header">
+              <h2>이벤트 금리 현황</h2>
+              <a href="#"><i class="fa-solid fa-pen"></i> 이벤트 관리</a>
+            </div>
+            <div class="grid-2">
+              <div class="card">
+                <h3>진행 중 이벤트</h3>
+                <div class="badge-list">
+                  <span class="badge"><i class="fa-solid fa-fire"></i> 글로벌 주식 연계 적금 +1.5%</span>
+                  <span class="badge"><i class="fa-solid fa-gift"></i> 신학기 유학생 환전 지원</span>
+                  <span class="badge"><i class="fa-solid fa-plane"></i> 여행 시즌 환전 수수료 50%</span>
+                </div>
+              </div>
+              <div class="card">
+                <h3>점검 예정 항목</h3>
+                <ul class="timeline">
+                  <li>
+                    <strong>USD 외화예금 금리 경쟁력 분석</strong>
+                    <span>3/5 · 리스크 관리와 공동 검토</span>
+                  </li>
+                  <li>
+                    <strong>BNK 공동 해외송금 연계 예금 출시 준비</strong>
+                    <span>3/12 · 제휴 마케팅팀</span>
+                  </li>
+                  <li>
+                    <strong>해외 부동산 취득 고객 대상 패키지</strong>
+                    <span>3/19 · 개인자산관리</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

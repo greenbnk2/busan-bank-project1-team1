@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OO은행 메인화면</title>
+  <link rel="stylesheet" href="/static/css/mypage.css">
+  
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+    />
+
+</head>
+<body>
+
+  <!-- 상단 헤더 -->
+  <header>
+    <div class="top-bar">
+      <ul>
+        <li><a href="#">기업뱅킹</a></li>
+        <li><a href="#">하나카드</a></li>
+        <li><a href="#">은행소개</a></li>
+        <li><a href="#">채용안내</a></li>
+      </ul>
+
+      <div class="right-menu">
+        <a href="#">로그인</a>
+        <a href="#">회원가입</a>
+        <a href="#">Language ▾</a>
+      </div>
+    </div>
+
+    <div class="main-nav">
+      <div class="logo">
+        <img src="/static/images/logo.png" alt="OO은행 로고">
+      </div>
+
+
+    <!-- ✅ nav 메뉴 -->
+    <ul class="nav-menu">
+      <li class="menu-item" data-target="menu1"><a href="#">외화예금</a></li>
+      <li class="menu-item" data-target="menu2"><a href="#">외화송금</a></li>
+      <li class="menu-item" data-target="menu3"><a href="#">환전</a></li>
+      <li class="menu-item" data-target="menu4"><a href="#">환율</a></li>
+      <li class="menu-item" data-target="menu5"><a href="#">유학/이주/여행</a></li>
+      <li class="menu-item" data-target="menu6"><a href="#">고객센터</a></li>
+      <li class="menu-item" data-target="menu7"><a href="#">은행소개</a></li>
+    </ul>
+
+    <div class="nav-icons">
+      <a href="#"><i class="fa-solid fa-comment-dots"></i></a>
+      <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a href="#"><i class="fa-solid fa-bars"></i></a>
+    </div>
+
+    <!--  드롭다운들 여기로 옮김 -->
+    <div id="menu1" class="dropdown">
+      <div class="menu-column">
+        <h4><a href="#">외화예금상품</a></h4>
+      </div>
+      <div class="menu-column">
+        <h4><a href="#">외화예금안내</a></h4>
+        <ul>
+          <li><a href="#">외화예금안내</a></li>
+          <li><a href="#">당행외화이체</a></li>
+          <li><a href="#">해외외화예금개설</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h4><a href="#">외화예금우대서비스</a></h4>
+      </div>
+    </div>
+
+    <div id="menu2" class="dropdown">
+      <div class="menu-column">
+        <h4><a href="#">외화송금서비스</a></h4>
+        <ul>
+          <li><a href="#">인터넷외화송금서비스</a></li>
+          <li><a href="#">BNK공동해외송금서비스</a></li>
+          <li><a href="#">해외즉시송금서비스</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h4><a href="#">외화송금보내기</a></h4>
+        <ul>
+          <li><a href="#">송금안내</a></li>
+          <li><a href="#">송금하기</a></li>
+        </ul>
+      </div>
+      <div class="menu-column"><h4><a href="#">외화송금받기</a></h4></div>
+    </div>
+
+    <div id="menu3" class="dropdown">
+      <div class="menu-column">
+        <h4><a href="#">환전안내</a></h4>
+        <ul>
+          <li><a href="#">환전 가능 통화</a></li>
+          <li><a href="#">환전 가능 금액</a></li>
+          <li><a href="#">환전 요령</a></li>
+        </ul>
+      </div>
+      <div class="menu-column"><h4><a href="#">환율 우대</a></h4></div>
+      <div class="menu-column"><h4><a href="#">환전 계산기</a></h4></div>
+      <div class="menu-column"><h4><a href="#">환전하기</a></h4></div>
+    </div>
+
+    <div id="menu4" class="dropdown">
+      <div class="menu-column">
+        <h4><a href="#">환율 제공 서비스</a></h4>
+        <ul>
+          <li><a href="#">지정환율통지서비스</a></li>
+          <li><a href="#">이메일환율통지서비스</a></li>
+          <li><a href="#">무료환율표서비스</a></li>
+        </ul>
+      </div>
+      <div class="menu-column"><h4><a href="#">외환시장 동향</a></h4></div>
+      <div class="menu-column"><h4><a href="#">환리스크 관리</a></h4></div>
+    </div>
+
+    <div id="menu5" class="dropdown">
+      <div class="menu-column">
+        <h4><a href="#">유학</a></h4>
+        <ul>
+          <li><a href="#">해외유학서비스안내</a></li>
+          <li><a href="#">유학경비환전/송금</a></li>
+          <li><a href="#">해외유학지원서비스</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h4><a href="#">이주</a></h4>
+        <ul>
+          <li><a href="#">해외이주서비스안내</a></li>
+          <li><a href="#">해외이주비환전/송금</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h4><a href="#">여행</a></h4>
+        <ul>
+          <li><a href="#">여행시유의사항</a></li>
+          <li><a href="#">여행경비환전</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="menu6" class="dropdown">
+      <div class="menu-column"><h4><a href="#">고객상담</a></h4></div>
+      <div class="menu-column"><h4><a href="#">이용안내</a></h4></div>
+      <div class="menu-column"><h4><a href="#">금융소비자보호</a></h4></div>
+      <div class="menu-column"><h4><a href="#">상품공시실</a></h4></div>
+      <div class="menu-column"><h4><a href="#">자료실</a></h4></div>
+    </div>
+
+    <div id="menu7" class="dropdown">
+      <div class="menu-column"><h4><a href="#">은행안내</a></h4></div>
+      <div class="menu-column"><h4><a href="#">OO은행 스토리</a></h4></div>
+      <div class="menu-column"><h4><a href="#">투자자정보</a></h4></div>
+      <div class="menu-column"><h4><a href="#">영업점 안내</a></h4></div>
+    </div>
+
+  </div>
+</header>
+
+
+ <main class="mypage-container">
+
+<section class="profile-card">
+  <div class="profile-header">
+    <i class="fa-solid fa-circle-user"></i>
+    <h3>OOO 고객님</h3>
+    <p>최근 접속일 2025.11.02 15:03:03</p>
+    <button class="btn-grade">우수고객 우대서비스</button>
+  </div>
+
+  <ul class="profile-info">
+    <li><i class="fa-solid fa-user"></i> idididid</li>
+    <li><i class="fa-solid fa-envelope"></i> qqqq@naver.com</li>
+    <li><i class="fa-solid fa-phone"></i> 010-1111-****</li>
+  </ul>
+
+  <div class="profile-footer">
+    <a href="#">사용자 정보 변경 <i class="fa-solid fa-pen"></i></a>
+
+    <!-- ✅ 여기에 추가 -->
+    <div class="profile-action">
+      <button class="btn-account-open">
+        <i class="fa-solid fa-building-columns"></i> 입출금통장 개설
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <!-- 오른쪽 주요 내용 -->
+    <section class="account-section">
+
+<!-- 최근 거래 내역 -->
+<div class="transfer-history">
+  <h2>최근 거래 내역</h2>
+  <table class="history-table">
+    <thead>
+      <tr>
+        <th>거래일시</th>
+        <th>구분</th>
+        <th>계좌번호</th>
+        <th>금액</th>
+        <th>메모</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2025-11-01 15:42</td>
+        <td>입금</td>
+        <td>112-2188-1931-00</td>
+        <td>₩2,000,000</td>
+        <td>급여</td>
+      </tr>
+      <tr>
+        <td>2025-10-31 17:35</td>
+        <td>출금</td>
+        <td>112-2188-1931-00</td>
+        <td>₩500,000</td>
+        <td>월세</td>
+      </tr>
+      <tr>
+        <td>2025-10-30 09:22</td>
+        <td>출금</td>
+        <td>112-2188-1931-00</td>
+        <td>₩120,000</td>
+        <td>식비</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+      <!-- 나의 계좌정보 -->
+      <div class="my-account">
+        <div class="account-header">
+          <h2>나의 계좌정보</h2>
+          <div class="account-tabs">
+            <button class="active">출금계좌</button>
+            <button>오픈뱅킹</button>
+            <button>예금/신탁</button>
+            <button>펀드</button>
+            <button>대출</button>
+            <button>외화</button>
+            <button>보험</button>
+          </div>
+        </div>
+
+        <div class="account-body">
+          <table class="account-table">
+            <tr>
+              <th>계좌명</th>
+              <th>계좌번호</th>
+              <th>잔액</th>
+              <th>이체</th>
+            </tr>
+            <tr>
+              <td>자유저축예금</td>
+              <td>112-2188-1931-00</td>
+              <td>2,450,000원</td>
+              <td><button class="btn-transfer">이체</button></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 외화 보유 현황 -->
+      <div class="foreign-assets">
+  <div class="foreign-header">
+    <h2>보유 외화 자산</h2>
+    <button class="btn-more" id="toggleCurrencies">+ 더보기</button>
+  </div>
+
+  <div class="currency-list" id="currencyList">
+    <!-- 대표 3개 -->
+    <div class="currency-card">
+      <i class="fa-solid fa-dollar-sign"></i>
+      <p>USD (달러)</p>
+      <strong>$1,245.00</strong>
+    </div>
+    <div class="currency-card">
+      <i class="fa-solid fa-yen-sign"></i>
+      <p>JPY (엔화)</p>
+      <strong>¥158,230</strong>
+    </div>
+    <div class="currency-card">
+      <i class="fa-solid fa-euro-sign"></i>
+      <p>EUR (유로)</p>
+      <strong>€980.50</strong>
+    </div>
+
+    <!-- 추가 통화: 초기에 숨김 -->
+    <div class="currency-card hidden">
+      <i class="fa-solid fa-sterling-sign"></i>
+      <p>GBP (파운드)</p>
+      <strong>£700.20</strong>
+    </div>
+    <div class="currency-card hidden">
+      <i class="fa-solid fa-yuan-sign"></i>
+      <p>CNY (위안)</p>
+      <strong>¥8,350.00</strong>
+    </div>
+    <div class="currency-card hidden">
+      <i class="fa-solid fa-dollar-sign"></i>
+      <p>AUD (호주달러)</p>
+      <strong>$530.45</strong>
+    </div>
+  </div>
+</div>
+
+
+    </section>
+  </main>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 푸터 -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="#">사고신고</a> |
+    <a href="#">상품공시실</a> |
+    <a href="#">보호금융상품등록부</a> |
+    <a href="#">경영공시</a> |
+    <a href="#">퇴직연금공시</a> |
+    <a href="#">인증센터</a> |
+    <a href="#">상담센터</a> |
+    <a href="#">개인정보처리방침</a> |
+    <a href="#">신용정보활용체계</a> |
+    <a href="#">영업점찾기</a>
+  </div>
+
+  <div class="footer-info">
+    <div class="footer-logos">
+      <img src="https://www.hanabank.com/static/images/footer/wa.png" alt="웹접근성">
+      <img src="https://www.hanabank.com/static/images/footer/isms.png" alt="ISMS">
+      <img src="https://www.hanabank.com/static/images/footer/bs7799.png" alt="BS 인증">
+    </div>
+    <p>© OO Bank. All rights reserved.</p>
+    <div class="footer-right">
+      <p><strong>고객센터</strong> 1588-1111 / 1599-1111</p>
+      <p><strong>고객센터(해외)</strong> +82-42-520-2500</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom-nav">
+    <div class="bottom-item">브랜드사이트 ▾</div>
+    <div class="bottom-item">하나네트워크 ▾</div>
+    <div class="bottom-item">글로벌네트워크 ↗</div>
+    <div class="bottom-item">하나은행 SNS ▾</div>
+    <div class="bottom-item">💬 하나소비자세상 ↗</div>
+  </div>
+</footer>
+
+<script src ="/static/js/index.js"></script>
+
+</body>
+</html>
+

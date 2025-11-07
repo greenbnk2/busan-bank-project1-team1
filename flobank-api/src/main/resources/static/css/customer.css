@@ -1,0 +1,919 @@
+/* =========================================================
+   FLO BANK Base Style Sheet
+   파일명: base.css
+   설명: 모든 페이지 공통 적용 (reset + header + footer)
+   ========================================================= */
+
+/* 기본 초기화 및 폰트 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ------------------------------------
+   🔹 상단 헤더 영역 (top-bar + main-nav)
+------------------------------------ */
+
+/* 상단 탑바 */
+.top-bar {
+  background: #fafafa;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 80px;
+  font-size: 14px;
+}
+
+.top-bar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.top-bar a {
+  text-decoration: none;
+  color: #555;
+}
+
+.right-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.right-menu a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.right-menu a:hover {
+  color: #4A6FA5; 
+}
+
+/* 메인 네비게이션 */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 80px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* NAV 메뉴 */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu > li {
+  position: relative;
+}
+
+.nav-menu > li > a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  padding: 15px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.nav-menu > li > a:hover {
+  color: #4A6FA5;
+}
+
+/* 드롭다운 메뉴 */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: 1100px;
+  background: #fff;
+  border-top: 2px solid #4A6FA5;
+  display: none;
+  justify-content: flex-start;
+  gap: 60px;
+  padding: 30px 50px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transition: all 0.25s ease;
+  z-index: 100;
+}
+
+.dropdown.show {
+  display: flex;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 드롭다운 - 컬럼 */
+.menu-column {
+  min-width: 180px;
+}
+
+.menu-column h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.menu-column h4 a {
+  text-decoration: none;
+  color: #111;
+  transition: color 0.2s ease;
+}
+
+.menu-column h4 a:hover {
+  color: #4A6FA5;
+}
+
+/* 드롭다운 - 하위 목록 */
+.menu-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-column li {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.menu-column li a {
+  text-decoration: none;
+  color: #777;
+  transition: color 0.2s ease;
+}
+
+.menu-column li a:hover {
+  color: #4A6FA5;
+}
+
+/* 폰트어썸 네비 아이콘 */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-icons a {
+  color: #333;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-icons a:hover {
+  color: #4A6FA5;
+}
+
+/* ------------------------------------
+   🔹 푸터 영역
+------------------------------------ */
+
+footer {
+  margin-top: 60px;
+}
+
+.footer {
+  background: #f8f8f8;
+  border-top: 1px solid #e5e5e5; 
+  box-shadow: none;
+  padding: 60px 0 70px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* 푸터 링크 */
+.footer-links {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.footer-links a {
+  color: #444;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* 로고 + 저작권 */
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer-logos img {
+  height: 35px;
+  opacity: 0.9;
+}
+
+.footer-info p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* 고객센터 연락처 */
+.footer-right p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+.footer-right strong {
+  color: #222;
+  font-weight: 700;
+}
+
+/* 하단 버튼 */
+.footer-bottom-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.bottom-item {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bottom-item:hover {
+  background: #f1f1f1;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+
+/* -----------------------------/* -----------------------------/* -----------------------------
+///. qna_list
+/* -----------------------------/* -----------------------------/* -----------------------------
+
+/* -----------------------------
+   Layout
+------------------------------ */
+.customer-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 80px auto;
+  align-items: flex-start;
+}
+
+/* -----------------------------
+   Sidebar
+------------------------------ */
+.customer-sidebar {
+  width: 230px;
+  background: #fff;
+  border: 1px solid #e2e6ec;
+  border-radius: 10px;
+  padding: 25px 20px;
+  height: fit-content;
+}
+
+.customer-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #22304E;
+  margin-bottom: 20px;
+}
+
+.customer-category {
+  list-style: none;
+  padding: 0;
+}
+
+.customer-category > li {
+  margin-bottom: 14px;
+}
+
+.customer-category > li > a {
+  color: #222;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.customer-category > li > a:hover {
+  color: #2C5DE5;
+}
+
+/* 세부 카테고리 */
+.customer-subcategory {
+  list-style: none;
+  margin-top: 8px;
+  padding-left: 10px;
+}
+
+.customer-subcategory li {
+  margin-bottom: 6px;
+}
+
+.customer-subcategory a {
+  color: #666;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.customer-subcategory a:hover {
+  color: #2C5DE5;
+}
+
+/* ✅ Active 상태 */
+.customer-subcategory li.active a {
+  color: #2C5DE5;
+  font-weight: 700;
+}
+
+/* -----------------------------
+   Content
+------------------------------ */
+.customer-content {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #e2e6ec;
+  border-radius: 10px;
+  padding: 30px 40px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+  min-height: 500px;
+}
+
+.customer-content h2 {
+  font-size: 20px;
+  color: #22304E;
+  border-bottom: 2px solid #E3E7EC;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+.customer-desc {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+
+
+
+/* --------------------------
+   Q&A 게시판 스타일
+---------------------------*/
+.qna-board {
+  margin-top: 20px;
+}
+
+.board-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.btn-write {
+  border: 1px solid #ccc;     
+  background: #f5f5f5;        
+  color: #222; 
+  padding: 6px 14px;
+  border-radius: 4px;
+  box-shadow: none; 
+  text-decoration: none; 
+  transition: all 0.25s ease;
+}
+
+.board-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.board-table th, .board-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.board-table th {
+  background: #f7f7f7;
+}
+
+.board-table td a:hover {
+  text-decoration: underline;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  margin: 0 5px;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.pagination a.active {
+  background: #333;
+  color: #fff;
+}
+
+/* 상세보기 */
+.qna-view {
+  border-top: 2px solid #007b83;
+  margin-top: 20px;
+}
+
+.view-header {
+  background: #f7f7f7;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.view-body {
+  padding: 20px;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.view-footer {
+  text-align: right;
+  margin-top: 15px;
+}
+
+.btn-edit, .btn-delete, .btn-list {
+  border: 1px solid #ccc;        /* ✅ 연한 테두리 */
+  background: #f5f5f5;           /* ✅ 단색 회색 배경 */
+  color: #222;                   /* ✅ 검정 텍스트 */
+  box-shadow: none;              /* ✅ 그림자 제거 */
+  border-radius: 30px;
+  padding: 6px 10px;
+  margin-left: 6px;
+  
+}
+
+.btn-delete {
+ border: 1px solid #ccc;        /* ✅ 연한 테두리 */
+  background: #f5f5f5;           /* ✅ 단색 회색 배경 */
+  color: #222;                   /* ✅ 검정 텍스트 */
+  box-shadow: none;              /* ✅ 그림자 제거 */
+  border-radius: 30px;
+}
+
+.btn-edit {
+  background: #007b83;
+  color: #fff;
+}
+
+/* =========================================================
+   Q&A 게시판 - 페이지네이션 (FLO BANK 톤 + 밑줄 제거 완전 버전)
+   ========================================================= */
+
+.pagination {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.pagination a {
+  display: inline-block;
+  margin: 0 4px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  text-decoration: none !important;     /* ✅ 기본 밑줄 제거 */
+}
+
+.pagination a:hover,
+.pagination a:focus,
+.pagination a:active {
+  border-color: #4FBDBA;
+  color: #4FBDBA;
+  background: #f9fdfd;
+  text-decoration: none !important;     /* ✅ hover/focus/active 시에도 밑줄 제거 */
+}
+
+.pagination a.active {
+  background: #333;
+  border-color: #22304E;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none !important;     /* ✅ 활성 페이지도 밑줄 제거 */
+}
+
+.pagination .prev,
+.pagination .next {
+  color: #555;
+  font-weight: 500;
+  text-decoration: none !important;     /* ✅ 이전/다음 밑줄 제거 */
+}
+
+.pagination .prev:hover,
+.pagination .next:hover {
+  color: #4FBDBA;
+  border-color: #4FBDBA;
+  background: #f9fdfd;
+  text-decoration: none !important;
+}
+
+
+/* =========================================================
+   Q&A 게시판 - 게시글 제목 링크 스타일 (FLO BANK 톤)
+   ========================================================= */
+
+/* 기본 링크 (게시글 제목) */
+.board-table td a {
+  color: #22304E;                  /* 기본 네이비톤으로 통일 */
+  text-decoration: none !important; /* ✅ 밑줄 완전 제거 */
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+/* 마우스 올렸을 때 */
+.board-table td a:hover {
+  color: #4FBDBA;                  /* 포인트 민트 */
+  text-decoration: none !important; /* ✅ hover 시에도 밑줄 제거 */
+}
+
+/* 클릭 순간(active), 포커스 시에도 동일하게 */
+.board-table td a:active,
+.board-table td a:focus {
+  color: #4A6FA5;                  /* FLO 블루 */
+  text-decoration: none !important;
+  outline: none;
+}
+
+/* =========================================================
+   FLO BANK Q&A 수정 페이지 (qna_edit)
+   ========================================================= */
+
+/* 폼 영역 */
+.qna-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.qna-form label {
+  font-weight: 600;
+  color: #22304E;
+  font-size: 15px;
+}
+
+.qna-form input,
+.qna-form textarea {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.qna-form input:focus,
+.qna-form textarea:focus {
+  border-color: #4A6FA5;
+  box-shadow: 0 0 0 3px rgba(79, 189, 186, 0.15);
+  outline: none;
+}
+
+/* 버튼 영역 */
+.form-buttons {
+  text-align: right;
+  margin-top: 25px;
+}
+
+/* 수정 완료 버튼 */
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: 1px solid #ccc;   
+  background: #f5f5f5;      
+  color: #222;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+   box-shadow: none;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-submit:hover {
+  background: #e0e0e0;
+ transform: translateY(-1px);
+}
+
+/* 취소 버튼 */
+.btn-cancel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+  padding: 12px 26px;
+  border-radius: 30px;
+  background: #e9ecef;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-cancel:hover {
+  background: #d9dee4;
+  color: #111;
+  transform: translateY(-2px);
+}
+
+/* 아이콘 크기 조정 */
+.btn-submit i,
+.btn-cancel i {
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   FLO BANK Q&A 상세보기 (qna_view)
+   ========================================================= */
+
+.qna-view {
+  margin-top: 25px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 35px 40px 40px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  border-top: 3px solid #22304E;
+}
+
+/* 헤더 */
+.view-header {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+}
+
+.view-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #22304E;
+  margin-bottom: 8px;
+}
+
+.view-header .meta {
+  color: #666;
+  font-size: 14px;
+}
+
+.view-header strong {
+  color: #4A6FA5;
+}
+
+/* 본문 */
+.view-body {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.8;
+  padding: 5px 0 25px;
+  white-space: pre-line;
+}
+
+/* 답변 영역 */
+.view-answer {
+  margin-top: 25px;
+  background: #F8FAFB;
+  border: 1px solid #dce3e7;
+  border-radius: 10px;
+  padding: 20px 25px;
+}
+
+.view-answer h4 {
+  color: #22304E;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.view-answer i {
+  color: #4A6FA5;
+  font-size: 18px;
+}
+
+.answer-box p {
+  color: #444;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* 버튼 영역 */
+.view-footer {
+  text-align: right;
+  margin-top: 30px;
+}
+
+.view-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* 수정 버튼 */
+.view-footer .btn-submit {
+border: 1px solid #ccc;   
+  background: #f5f5f5;      
+  color: #222;  
+   box-shadow: none; 
+  box-shadow: none;
+}
+
+.view-footer .btn-submit:hover {
+  background: #e0e0e0;    
+  transform: translateY(-1px);
+}
+
+/* 삭제 버튼 */
+.view-footer .btn-delete {
+   border: 1px solid #ccc;        /* ✅ 연한 테두리 */
+  background: #f5f5f5;           /* ✅ 단색 회색 배경 */
+  color: #222;                   /* ✅ 검정 텍스트 */
+  box-shadow: none;              /* ✅ 그림자 제거 */
+  border-radius: 30px;
+}
+
+.view-footer .btn-delete:hover {
+  background: #e0e0e0;           /* ✅ hover 시 약간 어둡게 */
+  transform: translateY(-1px);
+}
+
+/* 목록 버튼 */
+.view-footer .btn-cancel {
+  background: #e9ecef;
+  color: #333;
+  margin-left: 8px;
+}
+
+.view-footer .btn-cancel:hover {
+  background: #d9dee4;
+  color: #111;
+  transform: translateY(-2px);
+}
+
+/* 아이콘 크기 */
+.view-footer i {
+  font-size: 15px;
+}
+/* =========================================================
+   FLO BANK Q&A 등록 페이지 (qna_write)
+   ========================================================= */
+
+/* 공통 폼 */
+.qna-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.qna-form label {
+  font-weight: 600;
+  color: #22304E;
+  font-size: 15px;
+}
+
+.qna-form input,
+.qna-form textarea {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: 'Noto Sans KR', sans-serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.qna-form input:focus,
+.qna-form textarea:focus {
+  border-color: #4A6FA5;
+  box-shadow: 0 0 0 3px rgba(79, 189, 186, 0.15);
+  outline: none;
+}
+
+/* 버튼 영역 */
+.form-buttons {
+  text-align: right;
+  margin-top: 25px;
+}
+
+/* 등록 버튼 */
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 28px;
+  border-radius: 30px;
+   border: 1px solid #ccc;   
+  background: #f5f5f5;      
+  color: #222;   
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: none;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-submit:hover {
+  background: #e0e0e0;      
+  transform: translateY(-1px);
+}
+
+/* 취소 버튼 */
+.btn-cancel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: #e9ecef;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-cancel:hover {
+  background: #d9dee4;
+  color: #111;
+  transform: translateY(-2px);
+}
+
+/* 아이콘 크기 조정 */
+.btn-submit i,
+.btn-cancel i {
+  font-size: 15px;
+}

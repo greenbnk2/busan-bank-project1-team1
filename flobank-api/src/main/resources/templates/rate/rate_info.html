@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>환율 조회</title>
+  <link rel="stylesheet" href="/static/css/rate.css"> <!-- 각 카테고리별 css 입력-->
+  
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+    />
+
+</head>
+<body>
+
+  <!-- 상단 헤더 -->
+!-- 상단 헤더 -->
+  <header>
+    <div class="top-bar">
+      <ul>
+        <li><a href="#">기업뱅킹</a></li>
+        <li><a href="#">하나카드</a></li>
+        <li><a href="#">은행소개</a></li>
+        <li><a href="#">채용안내</a></li>
+      </ul>
+
+      <div class="right-menu">
+        <a href="#">로그인</a>
+        <a href="#">회원가입</a>
+        <a href="#">Language ▾</a>
+      </div>
+    </div>
+
+    <div class="main-nav">
+      <div class="logo">
+        <img src="/static/images/logo.png" alt="OO은행 로고">
+      </div>
+
+
+    <!-- ✅ nav 메뉴 -->
+    <ul class="nav-menu">
+      <li class="menu-item" data-target="menu1"><a href="#">외화예금</a></li>
+      <li class="menu-item" data-target="menu2"><a href="#">외화송금</a></li>
+      <li class="menu-item" data-target="menu3"><a href="#">환전</a></li>
+      <li class="menu-item" data-target="menu4"><a href="#">환율</a></li>
+      <li class="menu-item" data-target="menu5"><a href="#">외환가이드</a></li>
+      <li class="menu-item" data-target="menu6"><a href="#">고객센터</a></li>
+      <li class="menu-item" data-target="menu7"><a href="#">은행소개</a></li>
+    </ul>
+
+    <div class="nav-icons">
+      <a href="#"><i class="fa-solid fa-comment-dots"></i></a>
+      <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a href="#"><i class="fa-solid fa-bars"></i></a>
+    </div>
+
+    <!--  드롭다운들 여기로 옮김 -->
+    <div id="menu1" class="dropdown">
+      <div class="menu-column">
+        <h4><a href="#">외화예금상품</a></h4>
+      </div>
+      <div class="menu-column">
+        <h4><a href="#">외화예금안내</a></h4>
+        <ul>
+          <li><a href="#">외화예금안내</a></li>
+          <li><a href="#">당행외화이체</a></li>
+          <li><a href="#">해외외화예금개설</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h4><a href="#">외화예금우대서비스</a></h4>
+      </div>
+    </div>
+
+    <div id="menu2" class="dropdown">
+      <div class="menu-column">
+        <h4><a href="#">외화송금서비스</a></h4>
+        <ul>
+          <li><a href="#">인터넷외화송금서비스</a></li>
+          <li><a href="#">BNK공동해외송금서비스</a></li>
+          <li><a href="#">해외즉시송금서비스</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h4><a href="#">외화송금보내기</a></h4>
+        <ul>
+          <li><a href="#">송금안내</a></li>
+          <li><a href="#">송금하기</a></li>
+        </ul>
+      </div>
+      <div class="menu-column"><h4><a href="#">외화송금받기</a></h4></div>
+    </div>
+
+    <div id="menu3" class="dropdown">
+      <div class="menu-column">
+        <h4><a href="#">환전안내</a></h4>
+        <ul>
+          <li><a href="#">환전 가능 통화</a></li>
+          <li><a href="#">환전 가능 금액</a></li>
+          <li><a href="#">환전 요령</a></li>
+        </ul>
+      </div>
+      <div class="menu-column"><h4><a href="#">환율 우대</a></h4></div>
+      <div class="menu-column"><h4><a href="#">환전 계산기</a></h4></div>
+      <div class="menu-column"><h4><a href="#">환전하기</a></h4></div>
+    </div>
+
+    <div id="menu4" class="dropdown">
+      <div class="menu-column"><h4><a href="#">환율 조회</a></h4></div>
+      <div class="menu-column">
+        <h4><a href="#">환율 제공 서비스</a></h4>
+        <ul>
+          <li><a href="#">지정환율통지서비스</a></li>
+          <li><a href="#">이메일환율통지서비스</a></li>
+          <li><a href="#">무료환율표서비스</a></li>
+        </ul>
+      </div>
+      <div class="menu-column"><h4><a href="#">외환시장 동향</a></h4></div>
+      <div class="menu-column"><h4><a href="#">환리스크 관리</a></h4></div>
+    </div>
+
+    <div id="menu5" class="dropdown">
+      <div class="menu-column">
+        <h4><a href="#">해외투자</a></h4>
+        <ul>
+          <li><a href="#">해외 직접 투자</a></li>
+          <li><a href="#">해외 부동산 취득</a></li>
+          <li><a href="#">해외증권투자(간접투자)</a></li>
+          <li><a href="#">국내기업의 해외지사</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h4><a href="#">국내투자</a></h4>
+        <ul>
+          <li><a href="#">외국인직접투자</a></li>
+          <li><a href="#">외국인/비거주자의 국내증권투자</a></li>
+          <li><a href="#">비거주자의 국내부동산 투자</a></li>
+          <li><a href="#">외국기업의 국내지사</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="menu6" class="dropdown">
+  <div class="menu-column">
+    <h4><a href="#">고객상담</a></h4>
+    <ul>
+      <li><a href="#">질문과 답변(Q&A)</a></li>
+      <li><a href="#">자주 묻는 질문</a></li>
+      <li><a href="#">챗봇</a></li>
+    </ul>
+  </div>
+  <div class="menu-column"><h4><a href="#">이용안내</a></h4></div>
+  <div class="menu-column"><h4><a href="#">금융소비자보호</a></h4></div>
+  <div class="menu-column"><h4><a href="#">상품공시실</a></h4></div>
+  <div class="menu-column"><h4><a href="#">자료실</a></h4></div>
+</div>
+
+    <div id="menu7" class="dropdown">
+      <div class="menu-column"><h4><a href="#">은행안내</a></h4></div>
+      <div class="menu-column"><h4><a href="#">OO은행 스토리</a></h4></div>
+      <div class="menu-column"><h4><a href="#">투자자정보</a></h4></div>
+      <div class="menu-column"><h4><a href="#">영업점 안내</a></h4></div>
+    </div>
+
+  </div>
+</header>
+
+
+<main class="rateinfo-center">
+  <section class="rateinfo-section">
+    <h2>환율 조회</h2>
+
+    <div class="rateinfo-search-box">
+      <label for="rateinfo-date">조회일자</label>
+      <input type="date" id="rateinfo-date" value="2025-11-04">
+      <button class="rateinfo-btn-search">조회</button>
+    </div>
+
+    <h3 class="rateinfo-subtitle">조회결과 <span>조회일자: 2025.11.04 현재</span></h3>
+
+    <table class="rateinfo-table">
+      <thead>
+        <tr>
+          <th>통화코드</th>
+          <th>통화명</th>
+          <th colspan="2">현찰</th>
+          <th colspan="2">송금(전신환)</th>
+          <th>매매기준율</th>
+          <th>미국달러환산율</th>
+        </tr>
+        <tr class="rateinfo-subhead">
+          <th></th><th></th>
+          <th>사실때</th><th>파실때</th>
+          <th>보내실때</th><th>받으실때</th>
+          <th></th><th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>USD</td><td>미국(달러)</td><td>1,459.50</td><td>1,416.50</td><td>1,450.90</td><td>1,425.10</td><td>1,438.00</td><td>1.0000</td></tr>
+        <tr><td>CNH</td><td>중국(위안)</td><td>209.46</td><td>193.36</td><td>203.22</td><td>199.60</td><td>201.41</td><td>0.1401</td></tr>
+        <tr><td>JPY</td><td>일본(100엔)</td><td>950.31</td><td>922.23</td><td>944.69</td><td>927.85</td><td>936.27</td><td>0.6511</td></tr>
+        <tr><td>GBP</td><td>영국(파운드)</td><td>1,917.50</td><td>1,860.84</td><td>1,906.17</td><td>1,872.17</td><td>1,889.17</td><td>1.3137</td></tr>
+        <tr><td>EUR</td><td>유럽연합(유로)</td><td>1,681.34</td><td>1,631.66</td><td>1,671.40</td><td>1,641.60</td><td>1,656.50</td><td>1.1519</td></tr>
+        <tr><td>CAD</td><td>캐나다(달러)</td><td>1,043.51</td><td>1,002.59</td><td>1,032.25</td><td>1,013.85</td><td>1,023.05</td><td>0.7114</td></tr>
+        <tr><td>CHF</td><td>스위스(프랑)</td><td>1,806.17</td><td>1,752.79</td><td>1,795.49</td><td>1,763.47</td><td>1,779.48</td><td>1.2375</td></tr>
+        <tr><td>HKD</td><td>홍콩(달러)</td><td>187.79</td><td>182.25</td><td>186.68</td><td>183.36</td><td>185.02</td><td>0.1287</td></tr>
+        <tr><td>SEK</td><td>스웨덴(크로나)</td><td>154.63</td><td>148.57</td><td>152.96</td><td>150.24</td><td>151.60</td><td>0.1054</td></tr>
+        <tr><td>AUD</td><td>호주(달러)</td><td>955.15</td><td>917.71</td><td>944.85</td><td>928.01</td><td>936.43</td><td>0.6512</td></tr>
+        <tr><td>DKK</td><td>덴마크(크로네)</td><td>226.31</td><td>217.45</td><td>223.87</td><td>219.89</td><td>221.88</td><td>0.1543</td></tr>
+        <tr><td>IDR</td><td>인도네시아(100루피아)</td><td>-</td><td>-</td><td>8.67</td><td>8.53</td><td>8.60</td><td>0.0060</td></tr>
+        <tr><td>NOK</td><td>노르웨이(크로네)</td><td>144.84</td><td>139.16</td><td>143.27</td><td>140.73</td><td>142.00</td><td>0.0987</td></tr>
+        <tr><td>SAR</td><td>사우디(리얄)</td><td>402.60</td><td>364.26</td><td>386.88</td><td>379.98</td><td>383.43</td><td>0.2666</td></tr>
+        <tr><td>KWD</td><td>쿠웨이트(디나르)</td><td>4,913.44</td><td>4,445.50</td><td>4,721.58</td><td>4,637.36</td><td>4,679.47</td><td>3.2542</td></tr>
+        <tr><td>BHD</td><td>바레인(디나르)</td><td>4,005.03</td><td>3,623.61</td><td>3,848.64</td><td>3,780.00</td><td>3,814.32</td><td>2.6525</td></tr>
+        <tr><td>AED</td><td>아랍에미리트(디르함)</td><td>411.13</td><td>371.99</td><td>395.08</td><td>388.04</td><td>391.56</td><td>0.2723</td></tr>
+        <tr><td>SGD</td><td>싱가포르(달러)</td><td>1,124.25</td><td>1,080.17</td><td>1,112.12</td><td>1,092.30</td><td>1,102.21</td><td>0.7665</td></tr>
+        <tr><td>MYR</td><td>말레이시아(링기트)</td><td>-</td><td>-</td><td>345.50</td><td>339.34</td><td>342.42</td><td>0.2381</td></tr>
+        <tr><td>NZD</td><td>뉴질랜드(달러)</td><td>833.70</td><td>801.02</td><td>824.71</td><td>810.01</td><td>817.36</td><td>0.5684</td></tr>
+        <tr><td>THB</td><td>태국(바트)</td><td>-</td><td>-</td><td>44.68</td><td>43.90</td><td>44.29</td><td>0.0308</td></tr>
+        <tr><td>MXN</td><td>멕시코(페소)</td><td>-</td><td>-</td><td>78.46</td><td>77.08</td><td>77.77</td><td>0.0541</td></tr>
+        <tr><td>TRY</td><td>터키(리라)</td><td>-</td><td>-</td><td>34.48</td><td>33.88</td><td>34.18</td><td>0.0238</td></tr>
+        <tr><td>ZAR</td><td>남아공(랜드)</td><td>-</td><td>-</td><td>83.78</td><td>82.30</td><td>83.04</td><td>0.0577</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 푸터 -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="#">사고신고</a> |
+    <a href="#">상품공시실</a> |
+    <a href="#">보호금융상품등록부</a> |
+    <a href="#">경영공시</a> |
+    <a href="#">퇴직연금공시</a> |
+    <a href="#">인증센터</a> |
+    <a href="#">상담센터</a> |
+    <a href="#">개인정보처리방침</a> |
+    <a href="#">신용정보활용체계</a> |
+    <a href="#">영업점찾기</a>
+  </div>
+
+  <div class="footer-info">
+    <div class="footer-logos">
+      <img src="https://www.hanabank.com/static/images/footer/wa.png" alt="웹접근성">
+      <img src="https://www.hanabank.com/static/images/footer/isms.png" alt="ISMS">
+      <img src="https://www.hanabank.com/static/images/footer/bs7799.png" alt="BS 인증">
+    </div>
+    <p>© OO Bank. All rights reserved.</p>
+    <div class="footer-right">
+      <p><strong>고객센터</strong> 1588-1111 / 1599-1111</p>
+      <p><strong>고객센터(해외)</strong> +82-42-520-2500</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom-nav">
+    <div class="bottom-item">브랜드사이트 ▾</div>
+    <div class="bottom-item">하나네트워크 ▾</div>
+    <div class="bottom-item">글로벌네트워크 ↗</div>
+    <div class="bottom-item">하나은행 SNS ▾</div>
+    <div class="bottom-item">💬 하나소비자세상 ↗</div>
+  </div>
+</footer>
+
+<script src ="/static/js/index.js"></script>
+
+</body>
+</html>
+

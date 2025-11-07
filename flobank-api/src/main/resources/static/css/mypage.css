@@ -1,0 +1,2447 @@
+/* =========================================================
+   FLO BANK Base Style Sheet
+   파일명: base.css
+   설명: 모든 페이지 공통 적용 (reset + header + footer)
+   ========================================================= */
+
+/* 기본 초기화 및 폰트 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ------------------------------------
+   🔹 상단 헤더 영역 (top-bar + main-nav)
+------------------------------------ */
+
+/* 상단 탑바 */
+.top-bar {
+  background: #fafafa;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 80px;
+  font-size: 14px;
+}
+
+.top-bar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.top-bar a {
+  text-decoration: none;
+  color: #555;
+}
+
+.right-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.right-menu a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.right-menu a:hover {
+  color: #4A6FA5; 
+}
+
+/* 메인 네비게이션 */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 80px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* NAV 메뉴 */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu > li {
+  position: relative;
+}
+
+.nav-menu > li > a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  padding: 15px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.nav-menu > li > a:hover {
+  color: #4A6FA5;
+}
+
+/* 드롭다운 메뉴 */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: 1100px;
+  background: #fff;
+  border-top: 2px solid #4A6FA5;
+  display: none;
+  justify-content: flex-start;
+  gap: 60px;
+  padding: 30px 50px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transition: all 0.25s ease;
+  z-index: 100;
+}
+
+.dropdown.show {
+  display: flex;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 드롭다운 - 컬럼 */
+.menu-column {
+  min-width: 180px;
+}
+
+.menu-column h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.menu-column h4 a {
+  text-decoration: none;
+  color: #111;
+  transition: color 0.2s ease;
+}
+
+.menu-column h4 a:hover {
+  color: #4A6FA5;
+}
+
+/* 드롭다운 - 하위 목록 */
+.menu-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-column li {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.menu-column li a {
+  text-decoration: none;
+  color: #777;
+  transition: color 0.2s ease;
+}
+
+.menu-column li a:hover {
+  color: #4A6FA5;
+}
+
+/* 폰트어썸 네비 아이콘 */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-icons a {
+  color: #333;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-icons a:hover {
+  color: #4A6FA5;
+}
+
+/* ------------------------------------
+   🔹 푸터 영역
+------------------------------------ */
+
+footer {
+  margin-top: 60px;
+}
+
+.footer {
+  background: #f8f8f8;
+  border-top: 1px solid #e5e5e5; 
+  box-shadow: none;
+  padding: 60px 0 70px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* 푸터 링크 */
+.footer-links {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.footer-links a {
+  color: #444;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* 로고 + 저작권 */
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer-logos img {
+  height: 35px;
+  opacity: 0.9;
+}
+
+.footer-info p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* 고객센터 연락처 */
+.footer-right p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+.footer-right strong {
+  color: #222;
+  font-weight: 700;
+}
+
+/* 하단 버튼 */
+.footer-bottom-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.bottom-item {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bottom-item:hover {
+  background: #f1f1f1;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+
+
+
+/* //////////////////////////////////////////////////////////// *
+
+
+/* =========================================================
+   MYPAGE
+   ========================================================= */
+
+   :root {
+  --main-color: #22304E;      /* 딥 네이비 (Main) */
+  --sub-color: #E3E7EC;       /* 미스트 그레이 (Sub) */
+  --point-color: #4A6FA5;     /* 스틸 블루 (Point) */
+  --bg-color: #F5F5F5;        /* 화이트 스모크 (Background) */
+  --text-dark: #222;
+  --text-gray: #666;
+  --border-light: #e5e5e5;
+}
+
+/* 전체 레이아웃 */
+.mypage-container {
+  display: flex;
+  justify-content: center;     /* 중앙 정렬 */
+  align-items: flex-start;     /* 위쪽 맞춤 */
+  gap: 40px;                   /* 좌우 간격 */
+  max-width: 1200px;           /* 전체 폭 제한 */
+  margin: 80px auto;           /* 화면 중앙 배치 */
+  padding: 0 40px;
+}
+
+/* 왼쪽 프로필 카드 */
+.profile-card {
+  flex: 0 0 280px; /* 고정폭 */
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  padding: 30px 20px;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.profile-header {
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-header i {
+  font-size: 70px;
+  color: var(--main-color);
+  margin-bottom: 10px;
+}
+
+.profile-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.profile-header p {
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+/* 우수고객 우대서비스 버튼 */
+.btn-grade {
+  margin-top: 10px;
+  background: var(--main-color); /* 딥네이비 */
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-grade:hover {
+  background: var(--point-color); /* 스틸블루로 hover */
+  box-shadow: 0 2px 6px rgba(34, 48, 78, 0.3);
+}
+
+
+
+.profile-info {
+  list-style: none;
+  margin-top: 20px;
+  padding-left: 0;
+}
+
+.profile-info li {
+  font-size: 14px;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-info i {
+  color: var(--sub-color);
+}
+
+
+
+/* 입출금통장 개설 버튼 */
+.profile-action {
+  text-align: center;
+  margin: 15px 0 10px 0;
+}
+
+.btn-account-open {
+  background: var(--main-color); /* 딥네이비 단색 */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-account-open i {
+  margin-right: 6px;
+}
+
+.btn-account-open:hover {
+  background: var(--point-color); /* hover 시 스틸블루 */
+  box-shadow: 0 2px 6px rgba(34, 48, 78, 0.3);
+  transform: translateY(-1px);
+}
+
+
+
+
+
+
+.profile-footer {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.profile-footer a {
+  color: var(--main-color);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+/* 오른쪽 콘텐츠 영역 */
+.account-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* 공통 카드 스타일 */
+.transfer-history,
+.my-account,
+.foreign-assets {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 25px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 제목 스타일 */
+.transfer-history h2,
+.my-account h2,
+.foreign-assets h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 15px;
+}
+
+/* 보유 외화자산 영역 */
+.foreign-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-more {
+  background: none;
+  border: none;
+  color: var(--point-color);
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.btn-more:hover {
+  color: var(--main-color);
+}
+
+/* 숨김 상태 */
+.hidden {
+  display: none;
+}
+
+/* 더보기 눌러서 펼칠 때 부드럽게 */
+.currency-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 25px;
+  transition: all 0.3s ease;
+}
+
+
+/* 표 스타일 (account-table과 동일) */
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.history-table th {
+  text-align: left;
+  background: #f5f8fa;
+  padding: 12px;
+  color: #555;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+.history-table td {
+  padding: 14px 12px;
+  font-size: 15px;
+  color: var(--text-dark);
+  border-bottom: 1px solid #eee;
+}
+
+.history-table tr:hover td {
+  background: #f9fafc;
+  color: var(--main-color);
+}
+
+
+.btn-more-history:hover {
+  text-decoration: underline;
+}
+/* 계좌 정보 */
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.account-header h2 {
+  font-size: 18px;
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+.account-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.account-tabs button {
+  border: 1px solid var(--border-light);
+  background: #fff;
+  color: var(--text-gray);
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.account-tabs button:hover {
+  background: var(--main-color);
+  color: #fff;
+}
+
+.account-tabs .active {
+  background: var(--main-color);
+  color: #fff;
+  border-color: var(--main-color);
+}
+
+/* 계좌 테이블 */
+.account-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.account-table th {
+  text-align: left;
+  background: #f5f8fa;
+  padding: 12px;
+  color: #555;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+.account-table td {
+  padding: 14px 12px;
+  font-size: 15px;
+  color: var(--text-dark);
+  border-bottom: 1px solid #eee;
+}
+
+.btn-transfer {
+  border: none;
+  background: var(--sub-color);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* 외화자산 */
+.currency-list {
+  display: flex;
+  justify-content: flex-start;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.currency-card {
+  flex: 1;
+  min-width: 160px;
+  max-width: 200px;
+  background: var(--bg-light);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  text-align: center;
+  padding: 20px 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.25s ease;
+}
+
+.currency-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.currency-card i {
+  font-size: 36px;
+  color: var(--sub-color);
+  margin-bottom: 10px;
+}
+
+.currency-card p {
+  color: var(--text-gray);
+  font-size: 14px;
+}
+
+.currency-card strong {
+  display: block;
+  font-size: 18px;
+  margin-top: 6px;
+  color: var(--text-dark);
+}
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  .mypage-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-card {
+    width: 100%;
+    position: static;
+  }
+
+  .account-section {
+    width: 100%;
+  }
+}
+
+
+
+
+/* =============================
+   계좌개설 약관
+============================= */
+:root {
+  --main-color: #22304E;   /* 딥 네이비 */
+  --highlight: #4FBDBA;   /* 버튼/포인트 민트색 */
+  --border-light: #ddd;
+  --text-dark: #222;
+  --text-gray: #666;
+}
+
+/* ----------------------------
+   전체 레이아웃
+---------------------------- */
+body {
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 중앙 컨테이너 */
+.terms-container {
+  width: 70%;
+  margin: 80px auto;
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 40px 50px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 제목 */
+.terms-container h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 8px;
+}
+
+.terms-desc {
+  color: var(--text-gray);
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* ----------------------------
+   그룹 제목
+---------------------------- */
+.group-title {
+  text-align: left;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 40px 0 15px;
+  border-left: 4px solid var(--main-color);
+  padding-left: 10px;
+}
+
+/* ----------------------------
+   약관 박스
+---------------------------- */
+.terms-box {
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+  background: #fafafa;
+}
+
+/* 약관 제목 */
+.terms-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+/* 약관 본문 */
+.terms-content {
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  border-radius: 6px;
+}
+
+/* 스크롤바 디자인 */
+.terms-content::-webkit-scrollbar {
+  width: 8px;
+}
+.terms-content::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+.terms-content::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
+/* ----------------------------
+   체크박스
+---------------------------- */
+.terms-check {
+  margin-top: 12px;
+}
+
+.custom-check {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-dark);
+  user-select: none;
+}
+
+/* 실제 input 숨김 */
+.custom-check input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* 기본 박스 */
+.custom-check .checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  display: inline-block;
+  margin-right: 8px;
+  transition: all 0.25s ease;
+}
+
+/* 체크 시 효과 */
+.custom-check input:checked + .checkmark {
+  background: var(--highlight);
+  border-color: var(--highlight);
+  box-shadow: 0 0 4px rgba(79, 189, 186, 0.6);
+  position: relative;
+}
+
+/* 체크표시 */
+.custom-check input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 5px;
+  height: 9px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* ----------------------------
+   전체 동의
+---------------------------- */
+.terms-all {
+  margin-top: 40px;
+  text-align: left;
+  font-size: 15px;
+  color: var(--main-color);
+  border-top: 1px dashed #ccc;
+  padding-top: 20px;
+}
+
+.terms-all .custom-check {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ----------------------------
+   다음 버튼
+---------------------------- */
+.terms-actions {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn-next {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 12px 36px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(34, 48, 78, 0.25);
+  transition: all 0.25s ease;
+}
+
+.btn-next:hover {
+  background: var(--highlight);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(79, 189, 186, 0.4);
+}
+
+/* ----------------------------
+   반응형 (태블릿/모바일)
+---------------------------- */
+@media (max-width: 1024px) {
+  .terms-container {
+    width: 85%;
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .terms-container {
+    width: 95%;
+    padding: 25px 20px;
+  }
+
+  .terms-title {
+    font-size: 14px;
+  }
+
+  .terms-content {
+    max-height: 160px;
+  }
+
+  .btn-next {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   입출금통장 개설 (open2-account) - 독립 버전
+   ========================================================= */
+
+.open2-account-container {
+  width: 70%;
+  margin: 80px auto;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.open2-account-box {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 35px 45px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 제목 및 설명 */
+.open2-account-box h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.open2-account-box .desc {
+  color: var(--text-gray);
+  font-size: 14px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* --------------------------------------------
+   입력 폼 기본
+-------------------------------------------- */
+.open2-form-group {
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.open2-form-label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.open2-form-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.open2-form-input:focus {
+  border-color: var(--highlight);
+  box-shadow: 0 0 4px rgba(79, 189, 186, 0.3);
+}
+
+/* 읽기 전용 input */
+.open2-form-input.readonly {
+  background-color: #f9f9f9;
+  color: #555;
+  cursor: not-allowed;
+  border-color: #e0e0e0;
+}
+.open2-form-input.readonly:focus {
+  border-color: #e0e0e0;
+  box-shadow: none;
+}
+
+/* 생년월일/성별 한 줄 */
+.open2-form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.open2-form-group.half {
+  flex: 1;
+}
+
+/* --------------------------------------------
+   이체 한도
+-------------------------------------------- */
+.open2-limit-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+
+/* 입력칸 폭 줄이기 */
+.open2-limit-input {
+  flex: 1;
+  max-width: 320px; /* ⬅️ 입력칸 최대폭 축소 */
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  padding: 8px 10px;
+  text-align: right;
+  transition: border-color 0.25s ease;
+}
+.open2-limit-input:focus {
+  border-color: var(--highlight);
+}
+
+.open2-btn-limit {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.open2-btn-limit:hover {
+  background: var(--highlight);
+}
+
+/* 안내 박스 */
+.open2-info-box {
+  background: #fafafa;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------
+   인증 / 비밀번호
+-------------------------------------------- */
+.open2-verify-box {
+  display: flex;
+  gap: 10px;
+}
+
+.open2-form-input.short {
+  flex: 1;
+}
+
+.open2-btn-verify {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.open2-btn-verify:hover {
+  background: var(--highlight);
+}
+
+/* --------------------------------------------
+   버튼
+-------------------------------------------- */
+.open2-form-actions {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.open2-btn-next {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 12px 34px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 3px 6px rgba(34, 48, 78, 0.25);
+  transition: all 0.25s ease;
+}
+.open2-btn-next:hover {
+  background: var(--highlight);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(79, 189, 186, 0.4);
+}
+
+/* --------------------------------------------
+   반응형
+-------------------------------------------- */
+@media (max-width: 1024px) {
+  .open2-account-container {
+    width: 85%;
+  }
+  .open2-account-box {
+    padding: 25px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .open2-account-container {
+    width: 95%;
+    margin: 60px auto;
+  }
+  .open2-account-box {
+    padding: 20px;
+  }
+  .open2-limit-input {
+    font-size: 14px;
+  }
+  .open2-btn-next {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+/* =========================================================
+   입출금통장 개설 (open2-account) - 수정 완료 버전
+   ========================================================= */
+
+.open2-account-container {
+  width: 70%;
+  margin: 80px auto;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.open2-account-box {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 35px 45px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 제목 및 설명 */
+.open2-account-box h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.open2-account-box .desc {
+  color: var(--text-gray);
+  font-size: 14px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* --------------------------------------------
+   입력 폼 기본
+-------------------------------------------- */
+.open2-form-group {
+  margin-bottom: 22px;
+  text-align: left;
+  width: 420px; /* 전체 폼 폭 제한 */
+  margin-left: auto;
+  margin-right: auto; /* 중앙 정렬 */
+}
+
+.open2-form-label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 14px;
+  margin-bottom: 6px;
+  text-align: left; /* 라벨 왼쪽정렬 */
+}
+
+.open2-form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.open2-form-input:focus {
+  border-color: var(--highlight);
+  box-shadow: 0 0 4px rgba(79, 189, 186, 0.3);
+}
+
+/* 읽기 전용 input */
+.open2-form-input.readonly {
+  background-color: #f9f9f9;
+  color: #555;
+  cursor: not-allowed;
+  border-color: #e0e0e0;
+}
+.open2-form-input.readonly:focus {
+  border-color: #e0e0e0;
+  box-shadow: none;
+}
+
+/* 생년월일/성별 한 줄 */
+.open2-form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  width: 420px;
+  margin: 0 auto;
+}
+.open2-form-group.half {
+  flex: 1;
+}
+
+/* --------------------------------------------
+   이체 한도
+-------------------------------------------- */
+.open2-limit-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.open2-limit-section .open2-form-group {
+  width: 420px;
+}
+
+.open2-limit-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.open2-limit-input {
+  flex: 1;
+  max-width: 320px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  padding: 8px 10px;
+  text-align: right;
+  transition: border-color 0.25s ease;
+}
+
+.open2-limit-input:focus {
+  border-color: var(--highlight);
+}
+
+.open2-btn-limit {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.open2-btn-limit:hover {
+  background: var(--highlight);
+}
+
+/* 안내문구 왼쪽 정렬 */
+.open2-guide-text {
+  font-size: 13px;
+  color: var(--text-gray);
+  margin-top: 5px;
+  text-align: left;
+}
+
+/* 안내 박스 */
+.open2-info-box {
+  background: #fafafa;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-gray);
+  line-height: 1.6;
+  width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --------------------------------------------
+   인증 / 비밀번호
+-------------------------------------------- */
+.open2-verify-box {
+  display: flex;
+  gap: 10px;
+}
+
+.open2-form-input.short {
+  flex: 1;
+}
+
+.open2-btn-verify {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.open2-btn-verify:hover {
+  background: var(--highlight);
+}
+
+/* --------------------------------------------
+   버튼
+-------------------------------------------- */
+.open2-form-actions {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.open2-btn-next {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 12px 34px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 3px 6px rgba(34, 48, 78, 0.25);
+  transition: all 0.25s ease;
+}
+.open2-btn-next:hover {
+  background: var(--highlight);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(79, 189, 186, 0.4);
+}
+
+/* --------------------------------------------
+   반응형
+-------------------------------------------- */
+@media (max-width: 1024px) {
+  .open2-account-container {
+    width: 85%;
+  }
+  .open2-account-box {
+    padding: 25px 30px;
+  }
+  .open2-form-group,
+  .open2-limit-section .open2-form-group,
+  .open2-info-box {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .open2-account-container {
+    width: 95%;
+    margin: 60px auto;
+  }
+  .open2-account-box {
+    padding: 20px;
+  }
+  .open2-limit-input {
+    font-size: 14px;
+  }
+  .open2-btn-next {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+
+
+/* =========================================================
+   입출금통장 개설 완료 (open3)
+   ========================================================= */
+
+.open3-complete {
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 100px 0;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.open3-complete-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 60px 80px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  max-width: 600px;
+}
+
+.open3-char-img img {
+  width: 160px;
+  margin-bottom: 25px;
+}
+
+.open3-complete-text h2 {
+  font-size: 22px;
+  color: var(--main-color);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.open3-complete-text p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.open3-complete-btn {
+  background: var(--main-color);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 6px rgba(34, 48, 78, 0.25);
+}
+
+.open3-complete-btn:hover {
+  background: var(--highlight);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(79, 189, 186, 0.4);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .open3-complete-box {
+    padding: 40px 30px;
+    width: 90%;
+  }
+
+  .open3-char-img img {
+    width: 120px;
+  }
+
+  .open3-complete-text h2 {
+    font-size: 20px;
+  }
+
+  .open3-complete-btn {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+
+
+/* ============================================
+   계좌이체 1단계 (transfer1)
+   ============================================ */
+.transfer1-container {
+  width: 70%;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.transfer1-box {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 40px 50px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 제목 */
+.transfer1-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--main-color);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* 안내문 */
+.transfer1-info-box {
+  background: #fafafa;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  text-align: left;
+  font-size: 14px;
+  color: var(--text-gray);
+  padding: 15px 20px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* 구역 제목 */
+.transfer1-subtitle {
+  text-align: left;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin: 30px 0 15px;
+  border-left: 4px solid var(--main-color);
+  padding-left: 10px;
+}
+
+/* 폼 그룹 */
+.transfer1-form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.transfer1-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.transfer1-input,
+.transfer1-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.transfer1-input:focus,
+.transfer1-select:focus {
+  border-color: var(--highlight);
+  box-shadow: 0 0 4px rgba(79,189,186,0.3);
+}
+
+/* 이체금액 버튼 */
+.transfer1-flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.transfer1-input.short {
+  max-width: 250px;
+  flex: 1;
+}
+
+.transfer1-btn-group button {
+  background: #f3f4f6;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.transfer1-btn-group button:hover {
+  background: var(--highlight);
+  color: #fff;
+}
+
+/* 선택입력 */
+.transfer1-flex-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.transfer1-form-group.half {
+  flex: 1;
+}
+
+/* 버튼영역 */
+.transfer1-actions {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.transfer1-btn-next {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 36px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(34,48,78,0.25);
+  transition: all 0.25s ease;
+}
+
+.transfer1-btn-next:hover {
+  background: var(--highlight);
+  transform: translateY(-2px);
+}
+
+.transfer1-btn-sub {
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px 30px;
+  margin-left: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.transfer1-btn-sub:hover {
+  background: #e5e5e5;
+}
+
+
+.transfer1-input.readonly {
+  background: #f9f9f9;
+  color: #555;
+  border-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+
+/* --------------------------------------------
+   단계 표시 바 (Progress Steps)
+-------------------------------------------- */
+.transfer1-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.transfer1-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.transfer1-step .num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.8px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  background: #fff;
+  color: #888;
+  transition: all 0.3s ease;
+}
+
+.transfer1-step.active .num {
+  border-color: var(--main-color);
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+.transfer1-step.active .text {
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+.transfer1-step .text {
+  font-size: 14px;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+/* ============================================
+   계좌이체 2단계 (transfer2)
+   ============================================ */
+.transfer2-container {
+  width: 70%;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.transfer2-box {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 40px 50px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 단계 표시 */
+.transfer2-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.transfer2-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.transfer2-step .num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.8px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  background: #fff;
+  color: #888;
+}
+
+.transfer2-step.active .num {
+  border-color: var(--main-color);
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+.transfer2-step.active .text {
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+/* 제목 */
+.transfer2-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--main-color);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* 안내문 */
+.transfer2-info-box {
+  background: #fafafa;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  text-align: left;
+  font-size: 14px;
+  color: var(--text-gray);
+  padding: 15px 20px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.transfer2-info-box.small {
+  background: #fefefe;
+  font-size: 13px;
+  padding: 12px 18px;
+}
+
+/* 구역 제목 */
+.transfer2-subtitle {
+  text-align: left;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin: 25px 0 15px;
+  border-left: 4px solid var(--main-color);
+  padding-left: 10px;
+}
+
+/* 테이블 */
+.transfer2-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: center;
+}
+
+.transfer2-table th {
+  background: #f5f8fa;
+  color: var(--text-dark);
+  font-weight: 600;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+.transfer2-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  color: var(--text-dark);
+}
+
+.transfer2-table .sub {
+  color: #777;
+  font-size: 12px;
+}
+
+/* 버튼 */
+.transfer2-actions {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.transfer2-btn-main {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 36px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(34,48,78,0.25);
+  transition: all 0.25s ease;
+}
+
+.transfer2-btn-main:hover {
+  background: var(--highlight);
+  transform: translateY(-2px);
+}
+
+.transfer2-btn-sub {
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px 30px;
+  margin-left: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.transfer2-btn-sub:hover {
+  background: #e5e5e5;
+}
+
+/* ============================================
+   계좌이체 3단계 (transfer3)
+   ============================================ */
+.transfer3-container {
+  width: 70%;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.transfer3-box {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 40px 50px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 단계 표시 */
+.transfer3-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.transfer3-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.transfer3-step .num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.8px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  background: #fff;
+  color: #888;
+}
+
+.transfer3-step.active .num {
+  border-color: var(--main-color);
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+.transfer3-step.active .text {
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+/* 완료 박스 */
+.transfer3-complete-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border: 1.5px solid #eee;
+  border-radius: 10px;
+  background: #fafafa;
+  padding: 25px 30px;
+  margin-bottom: 35px;
+}
+
+.transfer3-icon i {
+  font-size: 36px;
+  color: var(--main-color);
+}
+
+.transfer3-complete-text h2 {
+  font-size: 18px;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.transfer3-complete-text p {
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+/* 이체결과 */
+.transfer3-section {
+  margin-top: 25px;
+}
+
+.transfer3-subtitle {
+  text-align: left;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 15px;
+  border-left: 4px solid var(--main-color);
+  padding-left: 10px;
+}
+
+.transfer3-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 14px;
+}
+
+.transfer3-table th {
+  background: #f5f8fa;
+  color: var(--text-dark);
+  font-weight: 600;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+.transfer3-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  color: var(--text-dark);
+}
+
+.transfer3-table .sub {
+  color: #777;
+  font-size: 12px;
+}
+
+.transfer3-success {
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+.transfer3-guide {
+  font-size: 13px;
+  color: #777;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* 버튼 */
+.transfer3-actions {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.transfer3-btn-main {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 34px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 6px rgba(34,48,78,0.25);
+}
+
+.transfer3-btn-main:hover {
+  background: var(--highlight);
+  transform: translateY(-2px);
+}
+
+.transfer3-btn-sub {
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px 28px;
+  margin-left: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.transfer3-btn-sub:hover {
+  background: #e6e6e6;
+}
+
+
+
+/* ------------------------------------
+   🔹 마이페이지 AI 챗봇 화면
+------------------------------------ */
+.chatbot-page {
+  max-width: 1200px;
+  margin: 60px auto 100px;
+  padding: 0 20px;
+}
+
+.chatbot-hero {
+  background: #f3f5fa;
+  color: #22304E;
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #d9dfeb;
+  box-shadow: 0 12px 28px rgba(34, 48, 78, 0.08);
+}
+
+.chatbot-hero::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(74, 111, 165, 0.08);
+}
+
+.chatbot-hero .hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e3e8f2;
+  color: #22304E;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  margin-bottom: 18px;
+}
+
+.chatbot-hero h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.chatbot-hero p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #4a5d7f;
+  max-width: 660px;
+}
+
+.chatbot-layout {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.quick-links {
+  border: 1px solid #d9dfeb;
+  border-radius: 16px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 12px 28px rgba(34, 48, 78, 0.06);
+}
+
+.quick-links h3 {
+  font-size: 16px;
+  color: #22304E;
+  margin-bottom: 14px;
+}
+
+.quick-links button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #d9dfeb;
+  background: #f6f8fc;
+  color: #22304E;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.quick-links button:hover {
+  background: #e9edf7;
+  transform: translateY(-1px);
+}
+
+.chatbot-console {
+  border-radius: 20px;
+  border: 1px solid #d9dfeb;
+  background: #fff;
+  padding: 28px;
+  box-shadow: 0 16px 32px rgba(34, 48, 78, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.console-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.console-header h2 {
+  font-size: 24px;
+  color: #22304E;
+  margin-bottom: 6px;
+}
+
+.console-header p {
+  color: #607092;
+  font-size: 14px;
+}
+
+.console-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.console-actions .outline {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid #4A6FA5;
+  background: transparent;
+  color: #4A6FA5;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.console-actions .outline:hover {
+  background: #4A6FA5;
+  color: #fff;
+}
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-height: 560px;
+  min-height: 420px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.message {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.message .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.message.bot .avatar {
+  background: #22304E;
+  color: #fff;
+}
+
+.message.user .avatar {
+  background: #e3e7ec;
+  color: #22304E;
+}
+
+.message .bubble {
+  background: #f5f5f5;
+  padding: 14px 18px;
+  border-radius: 16px;
+  border: 1px solid #e3e7ec;
+  max-width: 75%;
+  box-shadow: 0 10px 24px rgba(34, 48, 78, 0.05);
+}
+
+.message.bot .bubble {
+  background: rgba(74, 111, 165, 0.12);
+  border-color: rgba(74, 111, 165, 0.35);
+}
+
+.message .meta {
+  display: block;
+  font-size: 12px;
+  color: #607092;
+  margin-bottom: 6px;
+}
+
+.suggested-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.suggested-actions button {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #4A6FA5;
+  color: #4A6FA5;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.chat-input {
+  border-top: 1px solid #e3e7ec;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.prompt-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.prompt-chips button {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid #d0d7e6;
+  background: #f5f5f5;
+  color: #22304E;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.prompt-chips button:hover {
+  background: #e3e7ec;
+  transform: translateY(-1px);
+}
+
+.input-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid #d0d7e6;
+  font-size: 15px;
+}
+
+.send-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  background: #4A6FA5;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.send-btn:hover {
+  background: #22304E;
+  transform: scale(1.05);
+}
+
+.guide-text {
+  font-size: 13px;
+  color: #607092;
+}
+
+.chatbot-support {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chatbot-support .faq-card,
+.chatbot-support .notice-card {
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid #d9dfeb;
+  padding: 20px;
+  box-shadow: 0 12px 28px rgba(34, 48, 78, 0.06);
+}
+
+.chatbot-support h3 {
+  font-size: 18px;
+  color: #22304E;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.faq-card .faq-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e3e7ec;
+  color: #22304E;
+  font-weight: 600;
+}
+
+.faq-card .faq-item:last-child {
+  border-bottom: none;
+}
+
+.notice-card p {
+  font-size: 14px;
+  color: #4a5d7f;
+  line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+  .chatbot-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .chatbot-support {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .chatbot-support > * {
+    flex: 1 1 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chatbot-hero {
+    padding: 30px;
+  }
+
+  .chatbot-hero h1 {
+    font-size: 26px;
+  }
+
+  .chatbot-console {
+    padding: 22px;
+  }
+
+  .console-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .console-actions {
+    width: 100%;
+  }
+
+  .console-actions .outline {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .send-btn {
+    width: 100%;
+    height: 48px;
+    border-radius: 12px;
+  }
+}

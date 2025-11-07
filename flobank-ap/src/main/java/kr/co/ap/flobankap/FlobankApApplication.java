@@ -1,4 +1,4 @@
-package kr.co.api.flobankap;
+package kr.co.ap.flobankap;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

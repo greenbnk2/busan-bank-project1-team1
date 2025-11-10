@@ -62,16 +62,10 @@ jobs:
         username: ${{ secrets.API_SERVER_USER }} # GitHub Secret에서 가져오기
         key: ${{ secrets.API_SERVER_KEY }}      # GitHub Secret에서 가져오기
         script: |
-          # 1. 기존에 실행 중인 API 서버 종료 (오류가 나도 계속 진행)
           pkill -f 'flobank-api.jar' || true
-          
-          # 2. 새 .jar 파일을 서버의 /home/ubuntu/api/ 폴더로 이동 (경로는 예시)
-          #    (이 폴더는 서버에 미리 만들어 두어야 합니다!)
-          mkdir -p /home/ubuntu/api
-          mv ./*.jar /home/ubuntu/api/flobank-api.jar
-          
-          # 3. 'prod' 프로필로 새 애플리케이션 실행
-          cd /home/ubuntu/api
+          mkdir -p /home/mjgemini987/api
+          mv ./*.jar /home/mjgemini987/api/flobank-api.jar
+          cd /home/mjgemini987/api
           nohup java -jar -Dspring.profiles.active=prod flobank-api.jar > api.log 2>&1 &
           
   # 3. AP 서버 배포 작업
@@ -91,14 +85,8 @@ jobs:
         username: ${{ secrets.AP_SERVER_USER }} # GitHub Secret에서 가져오기
         key: ${{ secrets.AP_SERVER_KEY }}      # GitHub Secret에서 가져오기
         script: |
-          # 1. 기존에 실행 중인 AP 서버 종료 (오류가 나도 계속 진행)
           pkill -f 'flobank-ap.jar' || true
-          
-          # 2. 새 .jar 파일을 서버의 /home/ubuntu/ap/ 폴더로 이동 (경로는 예시)
-          #    (이 폴더는 서버에 미리 만들어 두어야 합니다!)
-          mkdir -p /home/ubuntu/ap
-          mv ./*.jar /home/ubuntu/ap/flobank-ap.jar
-          
-          # 3. 'prod' 프로필로 새 애플리케이션 실행
-          cd /home/ubuntu/ap
+          mkdir -p /home/mjgemini987/ap   # 👈 ubuntu에서 mjgemini987로 수정
+          mv ./*.jar /home/mjgemini987/ap/flobank-ap.jar
+          cd /home/mjgemini987/ap
           nohup java -jar -Dspring.profiles.active=prod flobank-ap.jar > ap.log 2>&1 &

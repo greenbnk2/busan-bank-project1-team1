@@ -1,5 +1,5 @@
 # 1. Java 21(build.gradle 기준) 이미지를 불러옵니다.
-FROM openjdk:21-jdk-slim
+FROM eclipse-temurin:21-jdk-slim
 
 # 2. 작업 디렉터리를 /app으로 설정
 WORKDIR /app

@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  flobank-api: # 서비스 이름 (프론트엔드)
+    build: .   # 현재 폴더(flobank-api)의 Dockerfile을 사용
+    container_name: flobank-api-container # 컨테이너 이름
+    ports:
+      # application.yml의 웹 포트 8080을 외부에 8080으로 노출
+      - "8080:8080"
+    restart: always

@@ -7,7 +7,7 @@ WORKDIR /app
 # 3. Gradle 빌드에 필요한 파일들을 먼저 복사 (캐시 활용)
 COPY build.gradle settings.gradle gradlew ./
 COPY gradle ./gradle
-COPY src ./src   # ⬅️⬅️ 이 줄을 여기로 이동!
+COPY src ./src
 
 # 4. gradlew 실행 권한 부여
 RUN chmod +x ./gradlew

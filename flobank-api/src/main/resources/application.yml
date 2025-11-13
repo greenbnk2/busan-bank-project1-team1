@@ -28,6 +28,8 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 
+jwt:
+  secret: "v3rySecr3tKeyF0rFl0BankApiProjectMustBeLongerThan256Bits!!" # 256비트 이상 길이 필수
 
 eximbank:
   api:

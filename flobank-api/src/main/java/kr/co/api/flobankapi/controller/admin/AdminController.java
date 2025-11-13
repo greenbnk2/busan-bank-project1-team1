@@ -23,12 +23,7 @@ public class AdminController {
         return "admin/member";
     }
 
-    /** 외화예금 관리 */
-    @GetMapping("/products")
-    public String products(Model model) {
-        model.addAttribute("activeItem", "products");
-        return "admin/products";
-    }
+
 
     /** 외화예금 상세 보기 */
     @GetMapping("/products_view")

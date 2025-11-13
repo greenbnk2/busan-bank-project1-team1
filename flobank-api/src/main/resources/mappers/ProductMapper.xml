@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.api.flobankapi.mapper.admin.ProductMapper">
+
+    <insert id="insertProduct" parameterType="kr.co.api.flobankapi.dto.ProductDTO">
+        INSERT INTO TB_DPST_PROD_INFO (
+        dpst_name,
+        dpst_info,
+        dpst_type,
+        dpst_currency,
+        dpst_rate_type,
+        dpst_min_yn,
+        dpst_max_yn,
+        dpst_status,
+        dpst_descript,
+        dpst_period_type,
+        dpst_min_age,
+        dpst_max_age,
+        dpst_auto_renew_yn,
+        dpst_add_pay_yn,
+        dpst_add_pay_max,
+        dpst_part_wdrw_yn,
+        dpst_reg_dt
+        )
+        VALUES (
+        #{dpstName},
+        #{dpstInfo},
+        #{dpstType},
+        #{dpstCurrency},
+        #{dpstRateType},
+        #{dpstMinYn},
+        #{dpstMaxYn},
+        #{dpstStatus},
+        #{dpstDescript},
+        #{dpstPeriodType},
+        #{dpstMinAge},
+        #{dpstMaxAge},
+        #{dpstAutoRenewYn},
+        #{dpstAddPayYn},
+        #{dpstAddPayMax},
+        #{dpstPartWdrwYn},
+        SYSDATE
+        )
+
+        <selectKey keyProperty="dpstId" resultType="string" order="AFTER">
+            SELECT MAX(dpst_id)
+            FROM TB_DPST_PROD_INFO
+        </selectKey>
+
+    </insert>
+
+
+    <insert id="insertProductLimits" parameterType="java.util.List">
+        INSERT INTO TB_DPST_AMT_LMT (
+        lmt_dpst_id,
+        lmt_currency,
+        lmt_min_amt,
+        lmt_max_amt
+        )
+        <foreach collection="list" item="item" separator="UNION ALL">
+            SELECT
+            #{item.lmtDpstId},
+            #{item.lmtCurrency},
+            #{item.lmtMinAmt},
+            #{item.lmtMaxAmt}
+            FROM dual
+        </foreach>
+    </insert>
+
+
+
+</mapper>

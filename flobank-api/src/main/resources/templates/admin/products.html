@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="ko"
-      th:replace="~{admin/admin_template :: admin_template('외화예금 관리','외화예금 관리',~{::body})}">
+      th:insert="~{admin/admin_template :: admin_template('외화예금 관리','외화예금 관리',~{::body})}">
 <body>
 
 <!-- 외화예금 상품 전체 컨테이너 -->
@@ -10,96 +10,111 @@
     <section class="product-card">
         <h2 class="product-title">외화예금 상품 등록</h2>
 
-        <form id="foreignDepositForm" class="product-form-layout">
+        <form id="foreignDepositForm"
+              th:action="@{/admin/products/register}"
+              method="post">
+
+
             <!-- 기본정보 -->
             <div class="form-section">
                 <h3>기본정보</h3>
 
+                <!-- dpstName -->
                 <div class="form-group">
-                    <label for="prodName">상품명</label>
-                    <input type="text" id="prodName" name="prodName" placeholder="상품명을 입력하세요" required />
+                    <label for="dpstName">상품명</label>
+                    <input type="text" id="dpstName" name="dpstName" placeholder="상품명을 입력하세요" required />
                 </div>
 
+                <!-- dpstInfo -->
                 <div class="form-group">
-                    <label for="prodDesc">상품 한 줄 설명</label>
-                    <input type="text" id="prodDesc" name="prodDesc" placeholder="간단한 설명을 입력하세요" />
+                    <label for="dpstInfo">상품 한 줄 설명</label>
+                    <input type="text" id="dpstInfo" name="dpstInfo" placeholder="간단한 설명을 입력하세요" />
                 </div>
 
+                <!-- dpstType -->
                 <div class="form-group">
                     <label>예금 유형</label>
                     <div class="radio-group">
-                        <label><input type="radio" name="depositType" value="거치식" checked /> 거치식 예금</label>
-                        <label><input type="radio" name="depositType" value="자유적립식" /> 자유 적립식</label>
+                        <label><input type="radio" name="dpstType" value="1" checked /> 거치식 예금</label>
+                        <label><input type="radio" name="dpstType" value="2" /> 자유 적립식</label>
                     </div>
                 </div>
             </div>
+
 
             <!-- 통화 및 금액 설정 -->
             <div class="form-section">
                 <h3>통화 및 금액 설정</h3>
 
+                <!-- dpstCurrency -->
                 <div class="form-group">
                     <label>가능한 통화</label>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" name="currency" value="USD" /> USD(미국 달러)</label>
-                        <label><input type="checkbox" name="currency" value="JPY" /> JPY(일본 엔화)</label>
-                        <label><input type="checkbox" name="currency" value="EUR" /> EUR(유로화)</label>
-                        <label><input type="checkbox" name="currency" value="GBP" /> GBP(영국 파운드)</label>
-                        <label><input type="checkbox" name="currency" value="CNY" /> CNY(중국 위안)</label>
-                        <label><input type="checkbox" name="currency" value="AUD" /> AUD(호주 달러)</label>
+                        <label><input type="checkbox" name="dpstCurrency" value="USD" /> USD(미국 달러)</label>
+                        <label><input type="checkbox" name="dpstCurrency" value="JPY" /> JPY(일본 엔화)</label>
+                        <label><input type="checkbox" name="dpstCurrency" value="EUR" /> EUR(유로화)</label>
+                        <label><input type="checkbox" name="dpstCurrency" value="GBP" /> GBP(영국 파운드)</label>
+                        <label><input type="checkbox" name="dpstCurrency" value="CNY" /> CNY(중국 위안)</label>
+                        <label><input type="checkbox" name="dpstCurrency" value="AUD" /> AUD(호주 달러)</label>
                     </div>
                 </div>
 
                 <!-- 거치식 예금 전용 -->
-                <div class="conditional deposit-type" data-type="거치식">
-                    <!-- 선택된 통화별 최소/최대 가입액 동적 표시 -->
+                <div class="conditional deposit-type" data-type="1">
+                    <!-- 선택된 통화별 최소/최대 가입액 -->
                     <div id="currencyAmountContainer"></div>
 
+                    <!-- dpstAddPayYn -->
                     <div class="form-group">
                         <label>추가납입 가능 여부</label>
                         <div class="radio-group">
-                            <label><input type="radio" name="extraDeposit" value="yes" /> 가능</label>
-                            <label><input type="radio" name="extraDeposit" value="no" checked /> 불가능</label>
+                            <label><input type="radio" name="dpstAddPayYn" value="Y" /> 가능</label>
+                            <label><input type="radio" name="dpstAddPayYn" value="N" checked /> 불가능</label>
                         </div>
                     </div>
 
+                    <!-- dpstAddPayMax (조건부) -->
                     <div class="conditional extra-deposit">
                         <div class="form-group">
                             <label>신규 포함 최대 납입 회수</label>
-                            <input type="number" name="extraDepositCount" placeholder="예: 3회" />
+                            <input type="number" name="dpstAddPayMax" placeholder="예: 3회" />
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <!-- 환율 적용 기준 -->
             <div class="form-section">
                 <h3>환율 적용 기준</h3>
                 <div class="radio-group">
-                    <label><input type="radio" name="exchangeType" value="가입 시점" checked /> 가입 시점</label>
-                    <label><input type="radio" name="exchangeType" value="만기 시점" /> 만기 시점</label>
+                    <label><input type="radio" name="dpstRateType" value="1" checked /> 가입 시점</label>
+                    <label><input type="radio" name="dpstRateType" value="2" /> 만기 시점</label>
                 </div>
             </div>
+
 
             <!-- 상품 정보 -->
             <div class="form-section">
                 <h3>상품 정보</h3>
 
+                <!-- dpstDescript -->
                 <div class="form-group">
-                    <label for="prodSummary">상품 개요</label>
-                    <textarea id="prodSummary" name="prodSummary" rows="3" placeholder="상품 특징 및 안내를 입력하세요"></textarea>
+                    <label for="dpstDescript">상품 개요</label>
+                    <textarea id="dpstDescript" name="dpstDescript" rows="3" placeholder="상품 특징 및 안내를 입력하세요"></textarea>
                 </div>
 
+                <!-- dpstPeriodType -->
                 <div class="form-group">
                     <label>상품 가입기간 유형</label>
                     <div class="radio-group">
-                        <label><input type="radio" name="joinType" value="자유형" checked /> 자유형</label>
-                        <label><input type="radio" name="joinType" value="고정형" /> 고정형</label>
+                        <label><input type="radio" name="dpstPeriodType" value="1" checked /> 자유형</label>
+                        <label><input type="radio" name="dpstPeriodType" value="2" /> 고정형</label>
                     </div>
                 </div>
 
-                <!-- 자유형 -->
-                <div class="conditional join-type" data-type="자유형">
+                <!-- 자유형: dpstMinAge/dpstMaxAge는 별도 -->
+                <div class="conditional join-type" data-type="1">
                     <div class="form-inline">
                         <label>최소 가입월수</label>
                         <input type="number" name="minMonths" placeholder="예: 1" /> 개월
@@ -111,7 +126,7 @@
                 </div>
 
                 <!-- 고정형 -->
-                <div class="conditional join-type" data-type="고정형">
+                <div class="conditional join-type" data-type="2">
                     <div class="form-group">
                         <label>가입 가능한 개월수</label>
                         <input type="text" name="fixedMonths" placeholder="예: 3,6,12" />
@@ -119,36 +134,40 @@
                 </div>
             </div>
 
+
             <!-- 가입 대상 -->
             <div class="form-section">
                 <h3>가입 대상</h3>
+
                 <div class="radio-group">
                     <label><input type="radio" name="ageLimit" value="none" checked /> 제한 없음</label>
                     <label><input type="radio" name="ageLimit" value="yes" /> 제한 있음</label>
                 </div>
 
+                <!-- dpstMinAge / dpstMaxAge -->
                 <div class="conditional age-limit">
                     <div class="form-inline">
                         <label>최소 나이</label>
-                        <input type="number" name="minAge" placeholder="예: 19" /> 세
+                        <input type="number" name="dpstMinAge" placeholder="예: 19" /> 세
                     </div>
                     <div class="form-inline">
                         <label>최대 나이</label>
-                        <input type="number" name="maxAge" placeholder="예: 65" /> 세
+                        <input type="number" name="dpstMaxAge" placeholder="예: 65" /> 세
                     </div>
                 </div>
             </div>
+
 
             <!-- 분할 인출 -->
             <div class="form-section">
                 <h3>분할 인출 설정</h3>
 
+                <!-- dpstPartWdrwYn -->
                 <div class="radio-group">
-                    <label><input type="radio" name="partialWithdrawal" value="yes" /> 가능</label>
-                    <label><input type="radio" name="partialWithdrawal" value="no" checked /> 불가능</label>
+                    <label><input type="radio" name="dpstPartWdrwYn" value="Y" /> 가능</label>
+                    <label><input type="radio" name="dpstPartWdrwYn" value="N" checked /> 불가능</label>
                 </div>
 
-                <!-- 조건부 표시 영역 -->
                 <div class="conditional partial-withdrawal">
                     <div class="form-group">
                         <label>가능 시점 (가입 후)</label>
@@ -160,17 +179,18 @@
                         <input type="number" name="withdrawCount" placeholder="예: 3회" />
                     </div>
 
-                    <!-- 거치식일 경우에만 표시 -->
                     <div id="withdrawCurrencyContainer"></div>
                 </div>
             </div>
 
+
             <!-- 자동연장 -->
             <div class="form-section">
                 <h3>자동연장 설정</h3>
+
                 <div class="radio-group">
-                    <label><input type="radio" name="autoRenew" value="yes" /> 가능</label>
-                    <label><input type="radio" name="autoRenew" value="no" checked /> 불가능</label>
+                    <label><input type="radio" name="dpstAutoRenewYn" value="Y" /> 가능</label>
+                    <label><input type="radio" name="dpstAutoRenewYn" value="N" checked /> 불가능</label>
                 </div>
 
                 <div class="conditional auto-renew">
@@ -195,12 +215,16 @@
                 </div>
             </div>
 
-            <!-- 등록 버튼 -->
             <div class="form-submit">
                 <button type="submit" class="btn-submit">등록하기</button>
             </div>
+
         </form>
     </section>
+
+
+
+
 
     <!-- 외화예금 상품 관리 -->
     <section class="product-card">

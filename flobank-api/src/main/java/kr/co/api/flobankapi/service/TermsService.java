@@ -2,6 +2,7 @@ package kr.co.api.flobankapi.service;
 
 import kr.co.api.flobankapi.dto.TermsDTO;
 import kr.co.api.flobankapi.mapper.TermsInfoMapper;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
